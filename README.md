@@ -289,7 +289,25 @@ bash scripts/build_combined.sh
 - course 공통 안내 `README.md`
 - 각 lesson 폴더의 `README.md`
 
-## 8. 검증한 로컬 실행 예시
+## 8. Quality Gate 실행
+
+문서/lesson 자산을 수정한 뒤에는 아래 게이트를 실행합니다.
+
+```bash
+bash scripts/run_quality_gate.sh
+```
+
+해석 기준:
+- `PASS`(exit code 0): Must 완료 조건 충족
+- `FAIL`(exit code 1): 미완료. 로그에 나온 실패 항목부터 수정 후 재실행
+
+게이트 내부 순서:
+1. `COMBINED.md` freshness 검사(필요 시 재생성)
+2. `COMBINED.md` 결정성 검사(연속 재생성 해시 동일)
+3. `scripts/*.sh` 문법 검사
+4. `scripts/validate_course.sh` 구조/정합성 검사
+
+## 9. 검증한 로컬 실행 예시
 
 이 저장소를 정리하면서 아래 실행 파일 존재는 확인했습니다.
 

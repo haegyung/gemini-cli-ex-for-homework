@@ -1,11 +1,11 @@
 # Lesson 1. 스킬을 활용해서 리서치부터 글쓰기까지
 
-이 문서는 `LLM101.Learn-is-Doing`의 현재 레슨 본문입니다.  
-`README.md`가 공통 안내라면, 이 파일은 `Lesson 1`의 실제 학습 흐름과 실행 예시를 담습니다.
+이 문서는 `LLM101.Learn-is-Doing/lessons/lesson-1-research-writing/` 폴더의 정본 lesson guide 입니다.  
+course 공통 안내는 상위 폴더의 `../../README.md`를 보고, 현재 lesson 실행은 이 파일을 기준으로 진행합니다.
 
-## 1. 이 레슨의 목표
+## 1. 이 lesson의 목표
 
-이번 레슨의 목적은 하나입니다.
+이번 lesson의 목적은 하나입니다.
 - 작은 Skill과 command를 써서 `리서치 -> 정리 -> 분석 -> 글쓰기 -> 다듬기` 흐름을 한 번 끝까지 돌려보는 것
 
 핵심은 세 가지입니다.
@@ -18,18 +18,16 @@
 학습 문서 정본:
 - [Gemini CLI로 리서치부터 글쓰기까지](https://gyung.me/68nHrk)
 
-검증 메모:
-- 위 링크는 현재 `ol.vibeworkers.net` 공유 문서로 연결됩니다.
-- 페이지 제목은 `Gemini CLI로 리서치부터 글쓰기까지`입니다.
-
 기본 원칙:
 - 이 튜토리얼 시리즈에서 기본적으로 사용할 예제 교재는 위 문서입니다.
 - 사용자가 별도 교재를 지정하지 않으면 `https://gyung.me/68nHrk`를 기준 텍스트로 사용합니다.
 
-## 3. 이 레슨에서 실제로 쓰는 파일
+## 3. 이 lesson 폴더에서 실제로 쓰는 파일
 
+- `README.md`
+  - 현재 lesson 실행 가이드
 - `GEMINI.md`
-  - Gemini가 import된 프로젝트에서 읽는 규칙
+  - Gemini runtime 규칙
 - `.gemini/skills/research-task/SKILL.md`
   - 리서치 시작용 예시 Skill
 - `.gemini/skills/organize-task/SKILL.md`
@@ -41,9 +39,13 @@
 - `.gemini/skills/revise-task/SKILL.md`
   - 수정용 예시 Skill
 - `.gemini/commands/taskflow/start.toml`
-  - 리서치부터 초안까지 한 번에 시작하는 예시 command
+  - 리서치부터 초안까지 시작하는 예시 command
 - `.gemini/commands/taskflow/revise.toml`
   - 초안을 기준으로 다듬는 예시 command
+- `outputs/`
+  - lesson 산출물 저장 폴더
+- `notes/`
+  - lesson 메모 폴더
 
 ## 4. 먼저 고를 것: 이번 주에 실제로 해야 하는 작업 1개
 
@@ -106,21 +108,20 @@
 수정 결과는 보통 아래 파일로 정리하면 됩니다.
 - `outputs/05_polished_draft.md`
 
-## 6. Lesson 1을 다른 LLM 환경으로 옮길 때
+## 6. 다른 LLM 환경으로 옮길 때
 
-공통 원칙은 간단합니다.
-- 공통 규칙은 `GEMINI.md`에서 가져갑니다.
-- 현재 레슨의 목표와 예시는 `LESSON.md`를 기준으로 봅니다.
-- Gemini Skill / command는 각 환경의 기본 skill creator로 다시 만듭니다.
+공통 원칙:
+- 공통 흐름은 현재 lesson 폴더의 `README.md`를 기준으로 봅니다.
+- Gemini runtime 규칙은 현재 lesson 폴더의 `GEMINI.md`에서 가져갑니다.
+- `.gemini` 자산은 각 환경의 기본 skill creator로 다시 만듭니다.
 
 ### 6-1. Codex 예시 요청
 
 ```text
 $skill-creator
-이 프로젝트의 GEMINI.md, LESSON.md, .gemini/skills/*, .gemini/commands/*를 읽고
+이 lesson 폴더의 README.md, GEMINI.md, .gemini/skills/*, .gemini/commands/*를 읽고
 Codex용 lesson-1 research-writing skill을 만들어줘.
-산출물은 outputs/를 유지하고,
-레슨 목표와 예시는 LESSON.md를 기준으로 맞춰줘.
+산출물은 outputs/를 유지하고, 레슨 목표와 예시는 이 폴더의 README.md를 기준으로 맞춰줘.
 ```
 
 실행 예시:
@@ -135,9 +136,9 @@ Codex용 lesson-1 research-writing skill을 만들어줘.
 ### 6-2. Claude Code 예시 요청
 
 ```text
-이 프로젝트의 GEMINI.md, LESSON.md, .gemini/skills/*, .gemini/commands/*를 읽고
+이 lesson 폴더의 README.md, GEMINI.md, .gemini/skills/*, .gemini/commands/*를 읽고
 Claude Code용 Lesson 1 skill과 custom command 구조로 옮겨줘.
-공통 규칙은 CLAUDE.md로, 레슨 목표와 예시는 LESSON.md를 기준으로 맞춰줘.
+공통 규칙은 CLAUDE.md로, 레슨 목표와 예시는 현재 lesson 폴더 README.md를 기준으로 맞춰줘.
 산출물은 outputs/에 저장하게 해줘.
 ```
 
@@ -159,9 +160,6 @@ Claude Code용 Lesson 1 skill과 custom command 구조로 옮겨줘.
 5. `revise` 단계까지 1회 돌려보기
 6. 그 다음 자기 작업에 맞게 Skill 또는 command를 고치기
 7. 필요하면 Codex 또는 Claude Code로 같은 흐름을 옮기기
-
-처음부터 모든 환경에 동시에 옮기지 않는 것이 좋습니다.  
-한 번은 Gemini에서 성공 경험을 만든 뒤, 그 성공 흐름을 다른 환경으로 가져가는 편이 훨씬 덜 막힙니다.
 
 ## 8. 추천 실습 시나리오
 

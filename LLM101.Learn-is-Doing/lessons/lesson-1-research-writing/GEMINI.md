@@ -1,13 +1,13 @@
 # 학생 Task 중심 워크스페이스
 
 ## 프로젝트 정체성
-- 이 워크스페이스는 `LLM101.Learn-is-Doing` 튜토리얼 시리즈의 하위 레슨이다.
-- 현재 레슨은 `Lesson 1: 스킬을 활용해서 리서치부터 글쓰기까지` 이다.
+- 이 워크스페이스는 `LLM101.Learn-is-Doing` 튜토리얼 시리즈의 하위 lesson 이다.
+- 현재 lesson은 `Lesson 1: 스킬을 활용해서 리서치부터 글쓰기까지` 이다.
 
 ## 문서 구조
-- 공통 안내는 `README.md`를 기준으로 본다.
-- 현재 레슨의 목표, 예제 교재, 시나리오, command 예시는 `LESSON.md`를 기준으로 본다.
-- 다음 레슨 작성 템플릿은 `LESSON_TEMPLATE.md` 이다.
+- course 공통 안내는 `../../README.md`를 기준으로 본다.
+- 현재 lesson의 목표, 예제 교재, 시나리오, command 예시는 현재 폴더의 `README.md`를 기준으로 본다.
+- 다음 lesson 작성 템플릿은 `../../LESSON_TEMPLATE.md` 이다.
 
 ## 목적
 - 나는 대학생의 실제 과제, 발표, 학습 작업을 덜 막히게 만들기 위해 Gemini CLI를 사용한다.
@@ -33,7 +33,7 @@
 - 사용자가 제공하지 않은 자료를 본 것처럼 말하지 않는다.
 
 ## 파일 산출 규칙
-- 가능하면 outputs/ 폴더에 결과를 저장한다.
+- 가능하면 현재 lesson 폴더의 `outputs/`에 결과를 저장한다.
 - 파일명은 명확하게 한다.
   - 01_research_plan.md
   - 02_outline.md

@@ -1,0 +1,14 @@
+{
+  "id": "openai-codex-subagents",
+  "group": "openai-codex",
+  "vendor": "OpenAI",
+  "topic": "Codex Subagents",
+  "url": "https://developers.openai.com/codex/subagents",
+  "reader_url": "https://r.jina.ai/http://developers.openai.com/codex/subagents",
+  "fetched_at": "2026-04-16T03:40:10+00:00",
+  "final_url": "https://r.jina.ai/http://developers.openai.com/codex/subagents",
+  "status": 200,
+  "content_type": "text/plain; charset=utf-8",
+  "content_length": 44464,
+  "sha256": "76b0750da60c2803fb6da2bc7d5e1701a5cbed0e663867c19c024e6d764806c2"
+}

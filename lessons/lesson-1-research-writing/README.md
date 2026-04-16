@@ -14,6 +14,19 @@ course 공통 안내는 상위 폴더의 `../../README.md`를 보고, 현재 les
 - 완벽한 결과보다 작은 성공 경험을 먼저 만듭니다.
 - 예제 Skill과 command를 그대로 한 번 실행한 뒤, 자기 작업에 맞게 고칩니다.
 
+## 1-1. 쉬운 말 풀이
+
+- `workflow`
+  - 이 lesson에서 따라갈 작업 순서
+- `Skill`
+  - 특정 작업을 덜 막히게 해 주는 작은 전문 도우미
+- `command`
+  - 자주 쓰는 요청을 바로 실행하는 짧은 호출문
+- `runtime`
+  - 지금 실제로 쓰는 환경. 예: `Gemini CLI`, `Codex`, `Claude Code`
+- `revise`
+  - 한 번 만든 결과를 다시 다듬는 단계
+
 ## 2. 기준 학습 문서와 기본 연습 과제
 
 기준 학습 문서:
@@ -32,14 +45,16 @@ course 공통 안내는 상위 폴더의 `../../README.md`를 보고, 현재 les
 원칙:
 - 사용자가 별도 과제를 지정하지 않으면 위 기본 연습 과제로 시작합니다.
 - lesson의 목표와 출력 형식은 기준 학습 문서의 학생 workflow를 그대로 따릅니다.
+- local 폴더의 내용을 전부 학습자에게 펼쳐 보이는 것을 기본값으로 두지 않고, 필요한 내용만 이 본문에 노출합니다.
+- 계속 참고해야 하는 실행 안내는 로컬 폴더 탐색보다 VibeWorkers OL 본문에 적어 다시 볼 수 있게 정리합니다.
 - `Codex`와 `Claude Code` 안내가 필요하더라도, 같은 workflow와 outputs를 유지한 채 필요한 차이만 따로 적습니다.
 
 ## 3. 이 lesson 폴더에서 실제로 쓰는 파일
 
 - `README.md`
-  - 현재 lesson 실행 가이드
+  - 현재 lesson 실행 안내문
 - `GEMINI.md`
-  - lesson runtime 규칙 정본
+  - 이 lesson이 Gemini에서 어떻게 움직일지 적어 둔 실행 규칙
 - `.gemini/skills/research-task/SKILL.md`
   - 리서치 시작용 예시 Skill
 - `.gemini/skills/organize-task/SKILL.md`
@@ -51,9 +66,9 @@ course 공통 안내는 상위 폴더의 `../../README.md`를 보고, 현재 les
 - `.gemini/skills/revise-task/SKILL.md`
   - 수정용 예시 Skill
 - `.gemini/commands/taskflow/start.toml`
-  - 리서치부터 초안까지 시작하는 예시 command
+  - 리서치부터 초안까지 시작하는 예시 호출문
 - `.gemini/commands/taskflow/revise.toml`
-  - 초안을 기준으로 다듬는 예시 command
+  - 초안을 기준으로 다시 다듬는 예시 호출문
 - `outputs/`
   - lesson 산출물 저장 폴더
 - `notes/`
@@ -235,7 +250,7 @@ Claude Code용 Lesson 1 skill과 custom command 구조로 옮겨줘.
 ### 초안이 막힐 때
 
 ```text
-완벽한 글 말고 끝까지 갈 수 있는 초안으로 먼저 써줘.
+처음부터 완벽하게 쓰려 하지 말고, 일단 초안을 끝까지 써줘.
 근거가 약한 문장은 표시해줘.
 ```
 

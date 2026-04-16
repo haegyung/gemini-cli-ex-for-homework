@@ -2,7 +2,7 @@
 
 ## 한 줄 정의
 
-`LLM101.Learn-is-Doing`은 튜토리얼 시리즈 이름이고, 현재 tools workspace `LLM101.tools.Learn-is-doing/`는 [`tutorial-gemini-cli-student-workflow.md`](../LLM101.docs.Learn-is-doing/canonical/markdown/tutorial-gemini-cli-student-workflow.md) 의 학생 실습 흐름을 lesson 단위 실행 자산으로 옮긴 대학생용 workflow 스타터팩이다.
+`LLM101.Learn-is-Doing`은 튜토리얼 시리즈 이름이고, 현재 tools workspace `LLM101.tools.Learn-is-doing/`는 [`tutorial-gemini-cli-student-workflow.md`](../LLM101.docs.Learn-is-doing/canonical/markdown/tutorial-gemini-cli-student-workflow.md) 의 학생 실습 흐름을 lesson 단위 실행 자산으로 옮긴 대학생용 workflow 스타터팩이며, docs workshop 정본을 직접 참조하는 운영 경로와 VibeWorkers OL 연동 정본을 함께 포함한다.
 
 ## 프로젝트가 해결하려는 문제
 
@@ -23,7 +23,7 @@
 
 ### 1. Canonical First
 
-- 기준 학습 문서는 `tutorial-gemini-cli-student-workflow.md` 하나로 고정한다.
+- 기준 학습 문서는 `tutorial-gemini-cli-student-workflow.md` 하나만 기준으로 본다.
 - lesson 문서는 이 기준 문서의 실행 단계, 체크, 수정 loop를 lesson 형태로 다시 정리한다.
 - 기준 문서에 없는 큰 이론이나 별도 커리큘럼을 먼저 늘리지 않는다.
 
@@ -54,6 +54,8 @@
 
 - 각 lesson은 `outputs/`와 `notes/`를 기본 저장 위치로 둔다.
 - 학습 결과는 대화가 아니라 파일 산출물로 남긴다.
+- local 폴더 전체를 학습자에게 그대로 펼쳐 보이는 것을 기본값으로 삼지 않는다.
+- 학습에 필요한 실행 정보만 lesson 문서나 VibeWorkers OL 본문에 노출하고, local 폴더는 정본/작업 자산 저장소로 유지한다.
 
 ### 7. 환경 차이는 최소 안내
 
@@ -61,13 +63,24 @@
 - `Codex`와 `Claude Code`는 같은 workflow와 outputs를 유지한 채 runtime 파일명과 skill / command 구조 차이만 별도 안내한다.
 - 환경별 차이를 별도 커리큘럼으로 분리하지 않는다.
 
+### 8. 쉬운 말 우선
+
+- 학생-facing 문서에서 전문 용어나 기술 용어가 나오면 처음 등장할 때 쉬운 말로 바로 풀어 쓴다.
+- 가능하면 `용어 -> 익숙한 한국어 설명 -> 짧은 예시` 순서로 안내한다.
+- 설명 없이 줄임말이나 내부 운영 용어만 던지지 않는다.
+- 예를 들어 `workflow`는 `작업 순서`, `preflight`는 `시작 전 점검`, `orchestration`은 `여러 단계를 순서대로 묶어 움직이게 하는 일`처럼 적는다.
+- 학생이 계속 다시 보는 OL 본문에는 필요한 용어 풀이를 짧게 올리고, 더 깊은 정의는 local 정본이나 심화 문서로 내린다.
+
 ## 현재 범위
 
 - course 공통 안내 문서
 - lesson 템플릿
 - lesson 1: student task workflow 실행
 - lesson 2: skill-as-agent remix
+- docs 기준 workshop 운영 문서 direct reference
+- VibeWorkers OL bridge 문서와 인벤토리
 - 합본 문서 생성 스크립트
+- course / OL 자동 검증 스크립트
 
 ## 범위 밖
 
@@ -84,14 +97,22 @@
 - 최소 1개의 작업 산출물을 `outputs/`에 남길 수 있다.
 - 결과를 보고 `GEMINI.md`, `SKILL.md`, command 중 하나를 1회 이상 수정할 수 있다.
 - Lesson 2 수준에서는 command에 있던 orchestration 로직을 `SKILL.md`로 끌어올린 `orchestration-agent` 예시 1개를 남길 수 있다.
+- 운영자는 `../LLM101.docs.Learn-is-doing/canonical/markdown/workshop-materials.md`에서 90분 워크숍 패키지를 바로 열 수 있다.
+- `ol/manifest.tsv`와 `ol/pages/*.md`가 로컬 정본과 연결된 상태로 로컬 검증을 통과할 수 있다.
 - 필요하면 같은 workflow를 `Codex` 또는 `Claude Code` 구조로 옮길 수 있다.
 
 ## 현재 정본 기준
 
 - course 공통 안내 SoT: `README.md`
 - project definition SoT: `PROJECT_DEFINITION.md`
+- implementation requirements SoT: `IMPLEMENTATION_REQUIREMENTS.md`
 - lesson 템플릿 SoT: `LESSON_TEMPLATE.md`
 - 합본 SoT: `COMBINED.md`
+- course validation SoT: `scripts/validate_course.sh`
+- OL validation SoT: `scripts/validate_vibeworkers_ol.sh`
+- quality gate SoT: `scripts/run_quality_gate.sh`
 - lesson 실행 SoT: 각 lesson 폴더의 `README.md`
 - runtime 규칙 SoT: 각 lesson 폴더의 `GEMINI.md`
+- workshop SoT: `../LLM101.docs.Learn-is-doing/canonical/markdown/workshop-materials.md`, `../LLM101.docs.Learn-is-doing/canonical/markdown/workshop-*.md`
+- VibeWorkers OL SoT: `ol/README.md`, `ol/manifest.tsv`, `ol/pages/*.md`
 - 기준 학습 문서 SoT: `../LLM101.docs.Learn-is-doing/canonical/markdown/tutorial-gemini-cli-student-workflow.md`

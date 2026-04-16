@@ -1,0 +1,13 @@
+{
+  "id": "openai-codex-skills",
+  "group": "openai-codex",
+  "vendor": "OpenAI",
+  "topic": "Codex Skills",
+  "url": "https://developers.openai.com/codex/skills",
+  "fetched_at": "2026-04-16T03:40:05+00:00",
+  "final_url": "https://developers.openai.com/codex/skills",
+  "status": 200,
+  "content_type": "text/html; charset=utf-8",
+  "content_length": 249520,
+  "sha256": "6e62be08581ced38cb36ff26658abca55316446a828e7c3ec8807feb4dd871b4"
+}

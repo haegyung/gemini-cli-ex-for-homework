@@ -1,0 +1,13 @@
+{
+  "id": "claude-code-skills",
+  "group": "anthropic-claude-code",
+  "vendor": "Anthropic",
+  "topic": "Claude Code Skills",
+  "url": "https://code.claude.com/docs/en/skills",
+  "fetched_at": "2026-04-16T03:40:10+00:00",
+  "final_url": "https://code.claude.com/docs/en/skills",
+  "status": 200,
+  "content_type": "text/html; charset=utf-8",
+  "content_length": 1556776,
+  "sha256": "2533171c59c9c8a5178575cc26e2fea2c8cc7f1f48a9b01b805cca58ea0d4856"
+}

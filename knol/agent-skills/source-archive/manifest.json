@@ -1,0 +1,77 @@
+{
+  "domain_id": "agent-skills",
+  "domain_title": "Agent Skills",
+  "source_map_path": "../official-source-map.md",
+  "sources": [
+    {
+      "id": "openai-codex-skills",
+      "group": "openai-codex",
+      "vendor": "OpenAI",
+      "topic": "Codex Skills",
+      "url": "https://developers.openai.com/codex/skills"
+    },
+    {
+      "id": "openai-codex-subagents",
+      "group": "openai-codex",
+      "vendor": "OpenAI",
+      "topic": "Codex Subagents",
+      "url": "https://developers.openai.com/codex/subagents"
+    },
+    {
+      "id": "claude-code-skills",
+      "group": "anthropic-claude-code",
+      "vendor": "Anthropic",
+      "topic": "Claude Code Skills",
+      "url": "https://code.claude.com/docs/en/skills"
+    },
+    {
+      "id": "claude-code-subagents",
+      "group": "anthropic-claude-code",
+      "vendor": "Anthropic",
+      "topic": "Claude Code Sub-agents",
+      "url": "https://code.claude.com/docs/en/sub-agents"
+    },
+    {
+      "id": "gemini-cli-skills",
+      "group": "google-gemini-cli",
+      "vendor": "Google",
+      "topic": "Gemini CLI Skills",
+      "url": "https://geminicli.com/docs/cli/skills/"
+    },
+    {
+      "id": "gemini-cli-creating-skills",
+      "group": "google-gemini-cli",
+      "vendor": "Google",
+      "topic": "Creating Skills",
+      "url": "https://geminicli.com/docs/cli/creating-skills/"
+    },
+    {
+      "id": "agent-skills-home",
+      "group": "agent-skills-open-standard",
+      "vendor": "Agent Skills",
+      "topic": "Agent Skills Home",
+      "url": "https://agentskills.io/home"
+    },
+    {
+      "id": "agent-skills-what-are-skills",
+      "group": "agent-skills-open-standard",
+      "vendor": "Agent Skills",
+      "topic": "What Are Skills",
+      "url": "https://agentskills.io/what-are-skills"
+    },
+    {
+      "id": "agent-skills-specification",
+      "group": "agent-skills-open-standard",
+      "vendor": "Agent Skills",
+      "topic": "Skill Specification",
+      "url": "https://agentskills.io/specification"
+    },
+    {
+      "id": "agent-skills-best-practices",
+      "group": "agent-skills-open-standard",
+      "vendor": "Agent Skills",
+      "topic": "Skill Creation Best Practices",
+      "url": "https://agentskills.io/skill-creation/best-practices"
+    }
+  ]
+}

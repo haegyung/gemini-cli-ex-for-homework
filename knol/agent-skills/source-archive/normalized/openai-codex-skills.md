@@ -1,0 +1,805 @@
+---
+domain_id: "agent-skills"
+source_id: "openai-codex-skills"
+source_group: "openai-codex"
+source_vendor: "OpenAI"
+source_topic: "Codex Skills"
+source_url: "https://developers.openai.com/codex/skills"
+reader_url: "https://r.jina.ai/http://developers.openai.com/codex/skills"
+reader_title: "Agent Skills – Codex | OpenAI Developers"
+published_time: "Wed, 15 Apr 2026 21:01:34 GMT"
+captured_at: "2026-04-16T03:40:06+00:00"
+content_sha256: "5ea48b743c919c5714109ed120212ff388a1c5f1e1752e519554857d895771e7"
+---
+# Agent Skills – Codex | OpenAI Developers
+
+[![Image 1: OpenAI Developers](http://developers.openai.com/OpenAI_Developers.svg)](http://developers.openai.com/)
+
+[Home](http://developers.openai.com/)
+
+[API](http://developers.openai.com/api)
+
+[Docs Guides and concepts for the OpenAI API](http://developers.openai.com/api/docs)[API reference Endpoints, parameters, and responses](http://developers.openai.com/api/reference/overview)
+
+[Codex](http://developers.openai.com/codex)
+
+[Docs Guides, concepts, and product docs for Codex](http://developers.openai.com/codex)[Use cases Example workflows and tasks teams hand to Codex](http://developers.openai.com/codex/use-cases)
+
+[ChatGPT](http://developers.openai.com/chatgpt)
+
+[Apps SDK Build apps to extend ChatGPT](http://developers.openai.com/apps-sdk)[Commerce Build commerce flows in ChatGPT](http://developers.openai.com/commerce)
+
+[Resources](http://developers.openai.com/learn)
+
+[Showcase Demo apps to get inspired](http://developers.openai.com/showcase)[Blog Learnings and experiences from developers](http://developers.openai.com/blog)[Cookbook Notebook examples for building with OpenAI models](http://developers.openai.com/cookbook)[Learn Docs, videos, and demo apps for building with OpenAI](http://developers.openai.com/learn)[Community Programs, meetups, and support for builders](http://developers.openai.com/community)
+
+Start searching
+
+[API Dashboard](https://platform.openai.com/login)
+
+## Search the Codex docs
+
+Search docs 
+
+### Suggested
+
+responses create reasoning_effort realtime prompt caching
+
+Primary navigation
+
+ API  API Reference  Codex  ChatGPT  Resources 
+
+Search docs 
+
+### Suggested
+
+responses create reasoning_effort realtime prompt caching
+
+### Get started
+
+*   [Overview](http://developers.openai.com/api/docs)
+*   [Quickstart](http://developers.openai.com/api/docs/quickstart)
+*   [Models](http://developers.openai.com/api/docs/models)
+*   [Pricing](http://developers.openai.com/api/docs/pricing)
+*   [Libraries](http://developers.openai.com/api/docs/libraries)
+*   [Latest: GPT-5.4](http://developers.openai.com/api/docs/guides/latest-model)
+*   [Prompt guidance](http://developers.openai.com/api/docs/guides/prompt-guidance)
+
+### Core concepts
+
+*   [Text generation](http://developers.openai.com/api/docs/guides/text)
+*   [Code generation](http://developers.openai.com/api/docs/guides/code-generation)
+*   [Images and vision](http://developers.openai.com/api/docs/guides/images-vision)
+*   [Audio and speech](http://developers.openai.com/api/docs/guides/audio)
+*   [Structured output](http://developers.openai.com/api/docs/guides/structured-outputs)
+*   [Function calling](http://developers.openai.com/api/docs/guides/function-calling)
+*   [Responses API](http://developers.openai.com/api/docs/guides/migrate-to-responses)
+*   [Using tools](http://developers.openai.com/api/docs/guides/tools)
+
+### Agents SDK
+
+*   [Overview](http://developers.openai.com/api/docs/guides/agents)
+*   [Quickstart](http://developers.openai.com/api/docs/guides/agents/quickstart)
+*   [Agent definitions](http://developers.openai.com/api/docs/guides/agents/define-agents)
+*   [Models and providers](http://developers.openai.com/api/docs/guides/agents/models)
+*   [Running agents](http://developers.openai.com/api/docs/guides/agents/running-agents)
+*   [Sandbox agents](http://developers.openai.com/api/docs/guides/agents/sandboxes)
+*   [Orchestration](http://developers.openai.com/api/docs/guides/agents/orchestration)
+*   [Guardrails](http://developers.openai.com/api/docs/guides/agents/guardrails-approvals)
+*   [Results and state](http://developers.openai.com/api/docs/guides/agents/results)
+*   [Integrations and observability](http://developers.openai.com/api/docs/guides/agents/integrations-observability)
+*   [Evaluate agent workflows](http://developers.openai.com/api/docs/guides/agent-evals)
+*   [Voice agents](http://developers.openai.com/api/docs/guides/voice-agents)
+*   
+Agent Builder
+    *   [Overview](http://developers.openai.com/api/docs/guides/agent-builder)
+    *   [Node reference](http://developers.openai.com/api/docs/guides/node-reference)
+    *   [Safety in building agents](http://developers.openai.com/api/docs/guides/agent-builder-safety)
+    *   
+ChatKit
+        *   [Overview](http://developers.openai.com/api/docs/guides/chatkit)
+        *   [Customize](http://developers.openai.com/api/docs/guides/chatkit-themes)
+        *   [Widgets](http://developers.openai.com/api/docs/guides/chatkit-widgets)
+        *   [Actions](http://developers.openai.com/api/docs/guides/chatkit-actions)
+        *   [Advanced integrations](http://developers.openai.com/api/docs/guides/custom-chatkit)
+
+### Tools
+
+*   [Web search](http://developers.openai.com/api/docs/guides/tools-web-search)
+*   [MCP and Connectors](http://developers.openai.com/api/docs/guides/tools-connectors-mcp)
+*   [Skills](http://developers.openai.com/api/docs/guides/tools-skills)
+*   [Shell](http://developers.openai.com/api/docs/guides/tools-shell)
+*   [Computer use](http://developers.openai.com/api/docs/guides/tools-computer-use)
+*   
+File search and retrieval
+    *   [File search](http://developers.openai.com/api/docs/guides/tools-file-search)
+    *   [Retrieval](http://developers.openai.com/api/docs/guides/retrieval)
+
+*   [Tool search](http://developers.openai.com/api/docs/guides/tools-tool-search)
+*   
+More tools
+    *   [Apply Patch](http://developers.openai.com/api/docs/guides/tools-apply-patch)
+    *   [Local shell](http://developers.openai.com/api/docs/guides/tools-local-shell)
+    *   [Image generation](http://developers.openai.com/api/docs/guides/tools-image-generation)
+    *   [Code interpreter](http://developers.openai.com/api/docs/guides/tools-code-interpreter)
+
+### Run and scale
+
+*   [Conversation state](http://developers.openai.com/api/docs/guides/conversation-state)
+*   [Background mode](http://developers.openai.com/api/docs/guides/background)
+*   [Streaming](http://developers.openai.com/api/docs/guides/streaming-responses)
+*   [WebSocket mode](http://developers.openai.com/api/docs/guides/websocket-mode)
+*   [Webhooks](http://developers.openai.com/api/docs/guides/webhooks)
+*   [File inputs](http://developers.openai.com/api/docs/guides/file-inputs)
+*   
+Context management
+    *   [Compaction](http://developers.openai.com/api/docs/guides/compaction)
+    *   [Counting tokens](http://developers.openai.com/api/docs/guides/token-counting)
+    *   [Prompt caching](http://developers.openai.com/api/docs/guides/prompt-caching)
+
+*   
+Prompting
+    *   [Overview](http://developers.openai.com/api/docs/guides/prompting)
+    *   [Prompt engineering](http://developers.openai.com/api/docs/guides/prompt-engineering)
+    *   [Citation formatting](http://developers.openai.com/api/docs/guides/citation-formatting)
+
+*   
+Reasoning
+    *   [Reasoning models](http://developers.openai.com/api/docs/guides/reasoning)
+    *   [Reasoning best practices](http://developers.openai.com/api/docs/guides/reasoning-best-practices)
+
+### Evaluation
+
+*   [Getting started](http://developers.openai.com/api/docs/guides/evaluation-getting-started)
+*   [Working with evals](http://developers.openai.com/api/docs/guides/evals)
+*   [Prompt optimizer](http://developers.openai.com/api/docs/guides/prompt-optimizer)
+*   [External models](http://developers.openai.com/api/docs/guides/external-models)
+*   [Best practices](http://developers.openai.com/api/docs/guides/evaluation-best-practices)
+
+### Realtime API
+
+*   [Overview](http://developers.openai.com/api/docs/guides/realtime)
+*   
+Connect
+    *   [WebRTC](http://developers.openai.com/api/docs/guides/realtime-webrtc)
+    *   [WebSocket](http://developers.openai.com/api/docs/guides/realtime-websocket)
+    *   [SIP](http://developers.openai.com/api/docs/guides/realtime-sip)
+
+*   
+Usage
+    *   [Using realtime models](http://developers.openai.com/api/docs/guides/realtime-models-prompting)
+    *   [Managing conversations](http://developers.openai.com/api/docs/guides/realtime-conversations)
+    *   [MCP servers](http://developers.openai.com/api/docs/guides/realtime-mcp)
+    *   [Webhooks and server-side controls](http://developers.openai.com/api/docs/guides/realtime-server-controls)
+    *   [Managing costs](http://developers.openai.com/api/docs/guides/realtime-costs)
+    *   [Realtime transcription](http://developers.openai.com/api/docs/guides/realtime-transcription)
+    *   [Voice agents](http://developers.openai.com/api/docs/guides/voice-agents)
+
+### Model optimization
+
+*   [Optimization cycle](http://developers.openai.com/api/docs/guides/model-optimization)
+*   
+Fine-tuning
+    *   [Supervised fine-tuning](http://developers.openai.com/api/docs/guides/supervised-fine-tuning)
+    *   [Vision fine-tuning](http://developers.openai.com/api/docs/guides/vision-fine-tuning)
+    *   [Direct preference optimization](http://developers.openai.com/api/docs/guides/direct-preference-optimization)
+    *   [Reinforcement fine-tuning](http://developers.openai.com/api/docs/guides/reinforcement-fine-tuning)
+    *   [RFT use cases](http://developers.openai.com/api/docs/guides/rft-use-cases)
+    *   [Best practices](http://developers.openai.com/api/docs/guides/fine-tuning-best-practices)
+
+*   [Graders](http://developers.openai.com/api/docs/guides/graders)
+
+### Specialized models
+
+*   [Image generation](http://developers.openai.com/api/docs/guides/image-generation)
+*   [Video generation](http://developers.openai.com/api/docs/guides/video-generation)
+*   [Text to speech](http://developers.openai.com/api/docs/guides/text-to-speech)
+*   [Speech to text](http://developers.openai.com/api/docs/guides/speech-to-text)
+*   [Deep research](http://developers.openai.com/api/docs/guides/deep-research)
+*   [Embeddings](http://developers.openai.com/api/docs/guides/embeddings)
+*   [Moderation](http://developers.openai.com/api/docs/guides/moderation)
+
+### Going live
+
+*   [Production best practices](http://developers.openai.com/api/docs/guides/production-best-practices)
+*   
+Latency optimization
+    *   [Overview](http://developers.openai.com/api/docs/guides/latency-optimization)
+    *   [Predicted Outputs](http://developers.openai.com/api/docs/guides/predicted-outputs)
+    *   [Priority processing](http://developers.openai.com/api/docs/guides/priority-processing)
+
+*   
+Cost optimization
+    *   [Overview](http://developers.openai.com/api/docs/guides/cost-optimization)
+    *   [Batch](http://developers.openai.com/api/docs/guides/batch)
+    *   [Flex processing](http://developers.openai.com/api/docs/guides/flex-processing)
+
+*   [Accuracy optimization](http://developers.openai.com/api/docs/guides/optimizing-llm-accuracy)
+*   
+Safety
+    *   [Safety best practices](http://developers.openai.com/api/docs/guides/safety-best-practices)
+    *   [Safety checks](http://developers.openai.com/api/docs/guides/safety-checks)
+    *   [Cybersecurity checks](http://developers.openai.com/api/docs/guides/safety-checks/cybersecurity)
+    *   [Under 18 API Guidance](http://developers.openai.com/api/docs/guides/safety-checks/under-18-api-guidance)
+
+### Legacy APIs
+
+*   
+Assistants API
+    *   [Migration guide](http://developers.openai.com/api/docs/assistants/migration)
+    *   [Deep dive](http://developers.openai.com/api/docs/assistants/deep-dive)
+    *   [Tools](http://developers.openai.com/api/docs/assistants/tools)
+
+### Resources
+
+*   [Terms and policies](https://openai.com/policies)
+*   [Changelog](http://developers.openai.com/api/docs/changelog)
+*   [Your data](http://developers.openai.com/api/docs/guides/your-data)
+*   [Permissions](http://developers.openai.com/api/docs/guides/rbac)
+*   [Rate limits](http://developers.openai.com/api/docs/guides/rate-limits)
+*   [Deprecations](http://developers.openai.com/api/docs/deprecations)
+*   [MCP for deep research](http://developers.openai.com/api/docs/mcp)
+*   [Developer mode](http://developers.openai.com/api/docs/guides/developer-mode)
+*   
+ChatGPT Actions
+    *   [Introduction](http://developers.openai.com/api/docs/actions/introduction)
+    *   [Getting started](http://developers.openai.com/api/docs/actions/getting-started)
+    *   [Actions library](http://developers.openai.com/api/docs/actions/actions-library)
+    *   [Authentication](http://developers.openai.com/api/docs/actions/authentication)
+    *   [Production](http://developers.openai.com/api/docs/actions/production)
+    *   [Data retrieval](http://developers.openai.com/api/docs/actions/data-retrieval)
+    *   [Sending files](http://developers.openai.com/api/docs/actions/sending-files)
+
+ Docs  Use cases 
+
+### Getting Started
+
+*   [Overview](http://developers.openai.com/codex)
+*   [Quickstart](http://developers.openai.com/codex/quickstart)
+*   [Explore use cases](http://developers.openai.com/codex/use-cases)
+*   [Pricing](http://developers.openai.com/codex/pricing)
+*   
+Concepts
+    *   [Prompting](http://developers.openai.com/codex/prompting)
+    *   [Customization](http://developers.openai.com/codex/concepts/customization)
+    *   [Sandboxing](http://developers.openai.com/codex/concepts/sandboxing)
+    *   [Subagents](http://developers.openai.com/codex/concepts/subagents)
+    *   [Workflows](http://developers.openai.com/codex/workflows)
+    *   [Models](http://developers.openai.com/codex/models)
+    *   [Cyber Safety](http://developers.openai.com/codex/concepts/cyber-safety)
+
+### Using Codex
+
+*   
+App
+    *   [Overview](http://developers.openai.com/codex/app)
+    *   [Features](http://developers.openai.com/codex/app/features)
+    *   [Settings](http://developers.openai.com/codex/app/settings)
+    *   [Review](http://developers.openai.com/codex/app/review)
+    *   [Automations](http://developers.openai.com/codex/app/automations)
+    *   [Worktrees](http://developers.openai.com/codex/app/worktrees)
+    *   [Local Environments](http://developers.openai.com/codex/app/local-environments)
+    *   [Commands](http://developers.openai.com/codex/app/commands)
+    *   [Windows](http://developers.openai.com/codex/app/windows)
+    *   [Troubleshooting](http://developers.openai.com/codex/app/troubleshooting)
+
+*   
+IDE Extension
+    *   [Overview](http://developers.openai.com/codex/ide)
+    *   [Features](http://developers.openai.com/codex/ide/features)
+    *   [Settings](http://developers.openai.com/codex/ide/settings)
+    *   [IDE Commands](http://developers.openai.com/codex/ide/commands)
+    *   [Slash commands](http://developers.openai.com/codex/ide/slash-commands)
+
+*   
+CLI
+    *   [Overview](http://developers.openai.com/codex/cli)
+    *   [Features](http://developers.openai.com/codex/cli/features)
+    *   [Command Line Options](http://developers.openai.com/codex/cli/reference)
+    *   [Slash commands](http://developers.openai.com/codex/cli/slash-commands)
+
+*   
+Web
+    *   [Overview](http://developers.openai.com/codex/cloud)
+    *   [Environments](http://developers.openai.com/codex/cloud/environments)
+    *   [Internet Access](http://developers.openai.com/codex/cloud/internet-access)
+
+*   
+Integrations
+    *   [GitHub](http://developers.openai.com/codex/integrations/github)
+    *   [Slack](http://developers.openai.com/codex/integrations/slack)
+    *   [Linear](http://developers.openai.com/codex/integrations/linear)
+
+*   
+Codex Security
+    *   [Overview](http://developers.openai.com/codex/security)
+    *   [Setup](http://developers.openai.com/codex/security/setup)
+    *   [Improving the threat model](http://developers.openai.com/codex/security/threat-model)
+    *   [FAQ](http://developers.openai.com/codex/security/faq)
+
+### Configuration
+
+*   
+Config File
+    *   [Config Basics](http://developers.openai.com/codex/config-basic)
+    *   [Advanced Config](http://developers.openai.com/codex/config-advanced)
+    *   [Config Reference](http://developers.openai.com/codex/config-reference)
+    *   [Sample Config](http://developers.openai.com/codex/config-sample)
+
+*   [Speed](http://developers.openai.com/codex/speed)
+*   [Rules](http://developers.openai.com/codex/rules)
+*   [Hooks](http://developers.openai.com/codex/hooks)
+*   [AGENTS.md](http://developers.openai.com/codex/guides/agents-md)
+*   [MCP](http://developers.openai.com/codex/mcp)
+*   
+Plugins
+    *   [Overview](http://developers.openai.com/codex/plugins)
+    *   [Build plugins](http://developers.openai.com/codex/plugins/build)
+
+*   [Skills](http://developers.openai.com/codex/skills)
+*   [Subagents](http://developers.openai.com/codex/subagents)
+
+### Administration
+
+*   [Authentication](http://developers.openai.com/codex/auth)
+*   [Agent approvals & security](http://developers.openai.com/codex/agent-approvals-security)
+*   
+Enterprise
+    *   [Admin Setup](http://developers.openai.com/codex/enterprise/admin-setup)
+    *   [Governance](http://developers.openai.com/codex/enterprise/governance)
+    *   [Managed configuration](http://developers.openai.com/codex/enterprise/managed-configuration)
+
+*   [Windows](http://developers.openai.com/codex/windows)
+
+### Automation
+
+*   [Non-interactive Mode](http://developers.openai.com/codex/noninteractive)
+*   [Codex SDK](http://developers.openai.com/codex/sdk)
+*   [App Server](http://developers.openai.com/codex/app-server)
+*   [MCP Server](http://developers.openai.com/codex/guides/agents-sdk)
+*   [GitHub Action](http://developers.openai.com/codex/github-action)
+
+### Learn
+
+*   [Best practices](http://developers.openai.com/codex/learn/best-practices)
+*   [Videos](http://developers.openai.com/codex/videos)
+*   [Community](http://developers.openai.com/community)
+*   
+Blog
+    *   [Using skills to accelerate OSS maintenance](http://developers.openai.com/blog/skills-agents-sdk)
+    *   [Building frontend UIs with Codex and Figma](http://developers.openai.com/blog/building-frontend-uis-with-codex-and-figma)
+    *   [View all](http://developers.openai.com/blog/topic/codex)
+
+*   
+Cookbooks
+    *   [Codex Prompting Guide](http://developers.openai.com/cookbook/examples/gpt-5/codex_prompting_guide)
+    *   [Modernizing your Codebase with Codex](http://developers.openai.com/cookbook/examples/codex/code_modernization)
+    *   [View all](http://developers.openai.com/cookbook/topic/codex)
+
+*   [Building AI Teams](http://developers.openai.com/codex/guides/build-ai-native-engineering-team)
+
+### Releases
+
+*   [Changelog](http://developers.openai.com/codex/changelog)
+*   [Feature Maturity](http://developers.openai.com/codex/feature-maturity)
+*   [Open Source](http://developers.openai.com/codex/open-source)
+
+*   [Home](http://developers.openai.com/codex/use-cases)
+
+ Apps SDK  Commerce 
+
+*   [Home](http://developers.openai.com/apps-sdk)
+*   [Quickstart](http://developers.openai.com/apps-sdk/quickstart)
+
+### Core Concepts
+
+*   [MCP Apps in ChatGPT](http://developers.openai.com/apps-sdk/mcp-apps-in-chatgpt)
+*   [MCP Server](http://developers.openai.com/apps-sdk/concepts/mcp-server)
+*   [UX principles](http://developers.openai.com/apps-sdk/concepts/ux-principles)
+*   [UI guidelines](http://developers.openai.com/apps-sdk/concepts/ui-guidelines)
+
+### Plan
+
+*   [Research use cases](http://developers.openai.com/apps-sdk/plan/use-case)
+*   [Define tools](http://developers.openai.com/apps-sdk/plan/tools)
+*   [Design components](http://developers.openai.com/apps-sdk/plan/components)
+
+### Build
+
+*   [Set up your server](http://developers.openai.com/apps-sdk/build/mcp-server)
+*   [Build your ChatGPT UI](http://developers.openai.com/apps-sdk/build/chatgpt-ui)
+*   [Authenticate users](http://developers.openai.com/apps-sdk/build/auth)
+*   [Manage state](http://developers.openai.com/apps-sdk/build/state-management)
+*   [Monetize your app](http://developers.openai.com/apps-sdk/build/monetization)
+*   [Examples](http://developers.openai.com/apps-sdk/build/examples)
+
+### Deploy
+
+*   [Deploy your app](http://developers.openai.com/apps-sdk/deploy)
+*   [Connect from ChatGPT](http://developers.openai.com/apps-sdk/deploy/connect-chatgpt)
+*   [Test your integration](http://developers.openai.com/apps-sdk/deploy/testing)
+*   [Submit your app](http://developers.openai.com/apps-sdk/deploy/submission)
+
+### Guides
+
+*   [Optimize Metadata](http://developers.openai.com/apps-sdk/guides/optimize-metadata)
+*   [Security & Privacy](http://developers.openai.com/apps-sdk/guides/security-privacy)
+*   [Troubleshooting](http://developers.openai.com/apps-sdk/deploy/troubleshooting)
+
+### Resources
+
+*   [Changelog](http://developers.openai.com/apps-sdk/changelog)
+*   [App submission guidelines](http://developers.openai.com/apps-sdk/app-submission-guidelines)
+*   [Reference](http://developers.openai.com/apps-sdk/reference)
+
+*   [Home](http://developers.openai.com/commerce)
+
+### Guides
+
+*   [Get started](http://developers.openai.com/commerce/guides/get-started)
+*   [Best practices](http://developers.openai.com/commerce/guides/best-practices)
+
+### File Upload
+
+*   [Overview](http://developers.openai.com/commerce/specs/file-upload/overview)
+*   [Products](http://developers.openai.com/commerce/specs/file-upload/products)
+
+### API
+
+*   [Overview](http://developers.openai.com/commerce/specs/api/overview)
+*   [Feeds](http://developers.openai.com/commerce/specs/api/feeds)
+*   [Products](http://developers.openai.com/commerce/specs/api/products)
+*   [Promotions](http://developers.openai.com/commerce/specs/api/promotions)
+
+ Showcase  Blog  Cookbook  Learn  Community 
+
+*   [Home](http://developers.openai.com/showcase)
+
+*   [All posts](http://developers.openai.com/blog)
+
+### Recent
+
+*   [How Perplexity Brought Voice Search to Millions Using the Realtime API](http://developers.openai.com/blog/realtime-perplexity-computer)
+*   [Designing delightful frontends with GPT-5.4](http://developers.openai.com/blog/designing-delightful-frontends-with-gpt-5-4)
+*   [From prompts to products: One year of Responses](http://developers.openai.com/blog/one-year-of-responses)
+*   [Using skills to accelerate OSS maintenance](http://developers.openai.com/blog/skills-agents-sdk)
+*   [Building frontend UIs with Codex and Figma](http://developers.openai.com/blog/building-frontend-uis-with-codex-and-figma)
+
+### Topics
+
+*   [General](http://developers.openai.com/blog/topic/general)
+*   [API](http://developers.openai.com/blog/topic/api)
+*   [Apps SDK](http://developers.openai.com/blog/topic/apps-sdk)
+*   [Audio](http://developers.openai.com/blog/topic/audio)
+*   [Codex](http://developers.openai.com/blog/topic/codex)
+
+*   [Home](http://developers.openai.com/cookbook)
+
+### Topics
+
+*   [Agents](http://developers.openai.com/cookbook/topic/agents)
+*   [Evals](http://developers.openai.com/cookbook/topic/evals)
+*   [Multimodal](http://developers.openai.com/cookbook/topic/multimodal)
+*   [Text](http://developers.openai.com/cookbook/topic/text)
+*   [Guardrails](http://developers.openai.com/cookbook/topic/guardrails)
+*   [Optimization](http://developers.openai.com/cookbook/topic/optimization)
+*   [ChatGPT](http://developers.openai.com/cookbook/topic/chatgpt)
+*   [Codex](http://developers.openai.com/cookbook/topic/codex)
+*   [gpt-oss](http://developers.openai.com/cookbook/topic/gpt-oss)
+
+### Contribute
+
+*   [Cookbook on GitHub](https://github.com/openai/openai-cookbook)
+
+*   [Home](http://developers.openai.com/learn)
+*   [Docs MCP](http://developers.openai.com/learn/docs-mcp)
+
+### Categories
+
+*   [Demo apps](http://developers.openai.com/learn/code)
+*   [Videos](http://developers.openai.com/learn/videos)
+
+### Topics
+
+*   [Agents](http://developers.openai.com/learn/agents)
+*   [Audio & Voice](http://developers.openai.com/learn/audio)
+*   [Computer use](http://developers.openai.com/learn/cua)
+*   [Codex](http://developers.openai.com/learn/codex)
+*   [Evals](http://developers.openai.com/learn/evals)
+*   [gpt-oss](http://developers.openai.com/learn/gpt-oss)
+*   [Fine-tuning](http://developers.openai.com/learn/fine-tuning)
+*   [Image generation](http://developers.openai.com/learn/imagegen)
+*   [Scaling](http://developers.openai.com/learn/scaling)
+*   [Tools](http://developers.openai.com/learn/tools)
+*   [Video generation](http://developers.openai.com/learn/videogen)
+
+*   [Community](http://developers.openai.com/community)
+
+### Programs
+
+*   [Codex Ambassadors](http://developers.openai.com/community/codex-ambassadors)
+*   [Codex for Students](http://developers.openai.com/community/students)
+*   [Codex for Open Source](http://developers.openai.com/community/codex-for-oss)
+
+### Events
+
+*   [Meetups](http://developers.openai.com/community/meetups)
+*   [Hackathon Support](http://developers.openai.com/community/hackathons)
+
+*   [Forum](https://community.openai.com/)
+*   [Discord](https://discord.com/invite/openai)
+
+[API Dashboard](https://platform.openai.com/login)
+
+### Getting Started
+
+*   [Overview](http://developers.openai.com/codex)
+*   [Quickstart](http://developers.openai.com/codex/quickstart)
+*   [Explore use cases](http://developers.openai.com/codex/use-cases)
+*   [Pricing](http://developers.openai.com/codex/pricing)
+*   
+Concepts
+    *   [Prompting](http://developers.openai.com/codex/prompting)
+    *   [Customization](http://developers.openai.com/codex/concepts/customization)
+    *   [Sandboxing](http://developers.openai.com/codex/concepts/sandboxing)
+    *   [Subagents](http://developers.openai.com/codex/concepts/subagents)
+    *   [Workflows](http://developers.openai.com/codex/workflows)
+    *   [Models](http://developers.openai.com/codex/models)
+    *   [Cyber Safety](http://developers.openai.com/codex/concepts/cyber-safety)
+
+### Using Codex
+
+*   
+App
+    *   [Overview](http://developers.openai.com/codex/app)
+    *   [Features](http://developers.openai.com/codex/app/features)
+    *   [Settings](http://developers.openai.com/codex/app/settings)
+    *   [Review](http://developers.openai.com/codex/app/review)
+    *   [Automations](http://developers.openai.com/codex/app/automations)
+    *   [Worktrees](http://developers.openai.com/codex/app/worktrees)
+    *   [Local Environments](http://developers.openai.com/codex/app/local-environments)
+    *   [Commands](http://developers.openai.com/codex/app/commands)
+    *   [Windows](http://developers.openai.com/codex/app/windows)
+    *   [Troubleshooting](http://developers.openai.com/codex/app/troubleshooting)
+
+*   
+IDE Extension
+    *   [Overview](http://developers.openai.com/codex/ide)
+    *   [Features](http://developers.openai.com/codex/ide/features)
+    *   [Settings](http://developers.openai.com/codex/ide/settings)
+    *   [IDE Commands](http://developers.openai.com/codex/ide/commands)
+    *   [Slash commands](http://developers.openai.com/codex/ide/slash-commands)
+
+*   
+CLI
+    *   [Overview](http://developers.openai.com/codex/cli)
+    *   [Features](http://developers.openai.com/codex/cli/features)
+    *   [Command Line Options](http://developers.openai.com/codex/cli/reference)
+    *   [Slash commands](http://developers.openai.com/codex/cli/slash-commands)
+
+*   
+Web
+    *   [Overview](http://developers.openai.com/codex/cloud)
+    *   [Environments](http://developers.openai.com/codex/cloud/environments)
+    *   [Internet Access](http://developers.openai.com/codex/cloud/internet-access)
+
+*   
+Integrations
+    *   [GitHub](http://developers.openai.com/codex/integrations/github)
+    *   [Slack](http://developers.openai.com/codex/integrations/slack)
+    *   [Linear](http://developers.openai.com/codex/integrations/linear)
+
+*   
+Codex Security
+    *   [Overview](http://developers.openai.com/codex/security)
+    *   [Setup](http://developers.openai.com/codex/security/setup)
+    *   [Improving the threat model](http://developers.openai.com/codex/security/threat-model)
+    *   [FAQ](http://developers.openai.com/codex/security/faq)
+
+### Configuration
+
+*   
+Config File
+    *   [Config Basics](http://developers.openai.com/codex/config-basic)
+    *   [Advanced Config](http://developers.openai.com/codex/config-advanced)
+    *   [Config Reference](http://developers.openai.com/codex/config-reference)
+    *   [Sample Config](http://developers.openai.com/codex/config-sample)
+
+*   [Speed](http://developers.openai.com/codex/speed)
+*   [Rules](http://developers.openai.com/codex/rules)
+*   [Hooks](http://developers.openai.com/codex/hooks)
+*   [AGENTS.md](http://developers.openai.com/codex/guides/agents-md)
+*   [MCP](http://developers.openai.com/codex/mcp)
+*   
+Plugins
+    *   [Overview](http://developers.openai.com/codex/plugins)
+    *   [Build plugins](http://developers.openai.com/codex/plugins/build)
+
+*   [Skills](http://developers.openai.com/codex/skills)
+*   [Subagents](http://developers.openai.com/codex/subagents)
+
+### Administration
+
+*   [Authentication](http://developers.openai.com/codex/auth)
+*   [Agent approvals & security](http://developers.openai.com/codex/agent-approvals-security)
+*   
+Enterprise
+    *   [Admin Setup](http://developers.openai.com/codex/enterprise/admin-setup)
+    *   [Governance](http://developers.openai.com/codex/enterprise/governance)
+    *   [Managed configuration](http://developers.openai.com/codex/enterprise/managed-configuration)
+
+*   [Windows](http://developers.openai.com/codex/windows)
+
+### Automation
+
+*   [Non-interactive Mode](http://developers.openai.com/codex/noninteractive)
+*   [Codex SDK](http://developers.openai.com/codex/sdk)
+*   [App Server](http://developers.openai.com/codex/app-server)
+*   [MCP Server](http://developers.openai.com/codex/guides/agents-sdk)
+*   [GitHub Action](http://developers.openai.com/codex/github-action)
+
+### Learn
+
+*   [Best practices](http://developers.openai.com/codex/learn/best-practices)
+*   [Videos](http://developers.openai.com/codex/videos)
+*   [Community](http://developers.openai.com/community)
+*   
+Blog
+    *   [Using skills to accelerate OSS maintenance](http://developers.openai.com/blog/skills-agents-sdk)
+    *   [Building frontend UIs with Codex and Figma](http://developers.openai.com/blog/building-frontend-uis-with-codex-and-figma)
+    *   [View all](http://developers.openai.com/blog/topic/codex)
+
+*   
+Cookbooks
+    *   [Codex Prompting Guide](http://developers.openai.com/cookbook/examples/gpt-5/codex_prompting_guide)
+    *   [Modernizing your Codebase with Codex](http://developers.openai.com/cookbook/examples/codex/code_modernization)
+    *   [View all](http://developers.openai.com/cookbook/topic/codex)
+
+*   [Building AI Teams](http://developers.openai.com/codex/guides/build-ai-native-engineering-team)
+
+### Releases
+
+*   [Changelog](http://developers.openai.com/codex/changelog)
+*   [Feature Maturity](http://developers.openai.com/codex/feature-maturity)
+*   [Open Source](http://developers.openai.com/codex/open-source)
+
+Copy Page More page actions
+
+Copy Page More page actions
+
+# Agent Skills
+
+Give Codex new capabilities and expertise
+
+Copy Page
+
+Use agent skills to extend Codex with task-specific capabilities. A skill packages instructions, resources, and optional scripts so Codex can follow a workflow reliably. Skills build on the [open agent skills standard](https://agentskills.io/).
+
+Skills are the authoring format for reusable workflows. Plugins are the installable distribution unit for reusable skills and apps in Codex. Use skills to design the workflow itself, then package it as a [plugin](http://developers.openai.com/codex/plugins/build) when you want other developers to install it.
+
+Skills are available in the Codex CLI, IDE extension, and Codex app.
+
+Skills use **progressive disclosure** to manage context efficiently: Codex starts with each skill’s metadata (`name`, `description`, file path, and optional metadata from `agents/openai.yaml`). Codex loads the full `SKILL.md` instructions only when it decides to use a skill.
+
+A skill is a directory with a `SKILL.md` file plus optional scripts and references. The `SKILL.md` file must include `name` and `description`.
+
+*   
+ my-skill/ 
+
+    *    SKILL.md  Required: instructions + metadata  
+    *    scripts/  Optional: executable code  
+    *    references/  Optional: documentation  
+    *    assets/  Optional: templates, resources  
+    *   
+ agents/ 
+
+        *    openai.yaml  Optional: appearance and dependencies  
+
+## How Codex uses skills
+
+Codex can activate skills in two ways:
+
+1.   **Explicit invocation:** Include the skill directly in your prompt. In CLI/IDE, run `/skills` or type `$` to mention a skill.
+2.   **Implicit invocation:** Codex can choose a skill when your task matches the skill `description`.
+
+Because implicit matching depends on `description`, write descriptions with clear scope and boundaries.
+
+## Create a skill
+
+Use the built-in creator first:
+
+`$skill-creator`
+The creator asks what the skill does, when it should trigger, and whether it should stay instruction-only or include scripts. Instruction-only is the default.
+
+You can also create a skill manually by creating a folder with a `SKILL.md` file:
+
+```
+---
+name: skill-name
+description: Explain exactly when this skill should and should not trigger.
+---
+
+Skill instructions for Codex to follow.
+```
+
+Codex detects skill changes automatically. If an update doesn’t appear, restart Codex.
+
+## Where to save skills
+
+Codex reads skills from repository, user, admin, and system locations. For repositories, Codex scans `.agents/skills` in every directory from your current working directory up to the repository root. If two skills share the same `name`, Codex doesn’t merge them; both can appear in skill selectors.
+
+| Skill Scope | Location | Suggested use |
+| --- | --- | --- |
+| `REPO` | `$CWD/.agents/skills` Current working directory: where you launch Codex. | If you’re in a repository or code environment, teams can check in skills relevant to a working folder. For example, skills only relevant to a microservice or a module. |
+| `REPO` | `$CWD/../.agents/skills` A folder above CWD when you launch Codex inside a Git repository. | If you’re in a repository with nested folders, organizations can check in skills relevant to a shared area in a parent folder. |
+| `REPO` | `$REPO_ROOT/.agents/skills` The topmost root folder when you launch Codex inside a Git repository. | If you’re in a repository with nested folders, organizations can check in skills relevant to everyone using the repository. These serve as root skills available to any subfolder in the repository. |
+| `USER` | `$HOME/.agents/skills` Any skills checked into the user’s personal folder. | Use to curate skills relevant to a user that apply to any repository the user may work in. |
+| `ADMIN` | `/etc/codex/skills` Any skills checked into the machine or container in a shared, system location. | Use for SDK scripts, automation, and for checking in default admin skills available to each user on the machine. |
+| `SYSTEM` | Bundled with Codex by OpenAI. | Useful skills relevant to a broad audience such as the skill-creator and plan skills. Available to everyone when they start Codex. |
+
+Codex supports symlinked skill folders and follows the symlink target when scanning these locations.
+
+These locations are for authoring and local discovery. When you want to distribute reusable skills beyond a single repo, or optionally bundle them with app integrations, use [plugins](http://developers.openai.com/codex/plugins/build).
+
+## Distribute skills with plugins
+
+Direct skill folders are best for local authoring and repo-scoped workflows. If you want to distribute a reusable skill, bundle two or more skills together, or ship a skill alongside an app integration, package them as a [plugin](http://developers.openai.com/codex/plugins/build).
+
+Plugins can include one or more skills. They can also optionally bundle app mappings, MCP server configuration, and presentation assets in a single package.
+
+## Install curated skills for local use
+
+To add curated skills beyond the built-ins for your own local Codex setup, use `$skill-installer`. For example, to install the `$linear` skill:
+
+`$skill-installer linear`
+You can also prompt the installer to download skills from other repositories. Codex detects newly installed skills automatically; if one doesn’t appear, restart Codex.
+
+Use this for local setup and experimentation. For reusable distribution of your own skills, prefer plugins.
+
+## Enable or disable skills
+
+Use `[[skills.config]]` entries in `~/.codex/config.toml` to disable a skill without deleting it:
+
+```
+[[skills.config]]
+path = "/path/to/skill/SKILL.md"
+enabled = false
+```
+
+Restart Codex after changing `~/.codex/config.toml`.
+
+## Optional metadata
+
+Add `agents/openai.yaml` to configure UI metadata in the [Codex app](http://developers.openai.com/codex/app), to set invocation policy, and to declare tool dependencies for a more seamless experience with using the skill.
+
+```
+interface:
+  display_name: "Optional user-facing name"
+  short_description: "Optional user-facing description"
+  icon_small: "./assets/small-logo.svg"
+  icon_large: "./assets/large-logo.png"
+  brand_color: "#3B82F6"
+  default_prompt: "Optional surrounding prompt to use the skill with"
+
+policy:
+  allow_implicit_invocation: false
+
+dependencies:
+  tools:
+    - type: "mcp"
+      value: "openaiDeveloperDocs"
+      description: "OpenAI Docs MCP server"
+      transport: "streamable_http"
+      url: "https://developers.openai.com/mcp"
+```
+
+`allow_implicit_invocation` (default: `true`): When `false`, Codex won’t implicitly invoke the skill based on user prompt; explicit `$skill` invocation still works.
+
+## Best practices
+
+*   Keep each skill focused on one job.
+*   Prefer instructions over scripts unless you need deterministic behavior or external tooling.
+*   Write imperative steps with explicit inputs and outputs.
+*   Test prompts against the skill description to confirm the right trigger behavior.
+
+For more examples, see [github.com/openai/skills](https://github.com/openai/skills) and [the agent skills specification](https://agentskills.io/specification).

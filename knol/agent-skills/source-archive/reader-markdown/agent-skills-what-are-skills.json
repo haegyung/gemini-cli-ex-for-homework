@@ -1,0 +1,14 @@
+{
+  "id": "agent-skills-what-are-skills",
+  "group": "agent-skills-open-standard",
+  "vendor": "Agent Skills",
+  "topic": "What Are Skills",
+  "url": "https://agentskills.io/what-are-skills",
+  "reader_url": "https://r.jina.ai/http://agentskills.io/what-are-skills",
+  "fetched_at": "2026-04-16T03:40:41+00:00",
+  "final_url": "https://r.jina.ai/http://agentskills.io/what-are-skills",
+  "status": 200,
+  "content_type": "text/plain; charset=utf-8",
+  "content_length": 2902,
+  "sha256": "28172894a5b8ab324e0f53a10f9c49af574565384d7590f440b01cc69fcc84eb"
+}

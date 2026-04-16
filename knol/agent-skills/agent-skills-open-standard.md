@@ -64,7 +64,7 @@ optional directories:
 - `references/`
   - 긴 배경지식을 분리해 본문 인지 부하를 줄인다.
 - `scripts/`
-  - 반복 작업을 실행 가능한 형태로 닫는다.
+  - 반복 작업을 실제로 바로 실행할 수 있게 만든다.
 
 best practices에서 lesson 2에 직접 중요한 포인트:
 - real expertise에서 추출할 것

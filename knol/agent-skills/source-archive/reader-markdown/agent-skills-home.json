@@ -1,0 +1,14 @@
+{
+  "id": "agent-skills-home",
+  "group": "agent-skills-open-standard",
+  "vendor": "Agent Skills",
+  "topic": "Agent Skills Home",
+  "url": "https://agentskills.io/home",
+  "reader_url": "https://r.jina.ai/http://agentskills.io/home",
+  "fetched_at": "2026-04-16T03:40:37+00:00",
+  "final_url": "https://r.jina.ai/http://agentskills.io/home",
+  "status": 200,
+  "content_type": "text/plain; charset=utf-8",
+  "content_length": 17313,
+  "sha256": "f97ffbab31d8d11b205e9fb9a8abc41d4047517b49fa4fdc679632bbdbb1ed0b"
+}

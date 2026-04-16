@@ -1,0 +1,14 @@
+{
+  "id": "openai-codex-skills",
+  "group": "openai-codex",
+  "vendor": "OpenAI",
+  "topic": "Codex Skills",
+  "url": "https://developers.openai.com/codex/skills",
+  "reader_url": "https://r.jina.ai/http://developers.openai.com/codex/skills",
+  "fetched_at": "2026-04-16T03:40:06+00:00",
+  "final_url": "https://r.jina.ai/http://developers.openai.com/codex/skills",
+  "status": 200,
+  "content_type": "text/plain; charset=utf-8",
+  "content_length": 37860,
+  "sha256": "c1a13ebbd9ab0d803096a990ce6bd717b725fb4c6a29d741d743d70e63a19c6f"
+}

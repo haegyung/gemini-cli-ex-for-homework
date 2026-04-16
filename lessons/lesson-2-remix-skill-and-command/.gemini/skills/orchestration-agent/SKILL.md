@@ -1,6 +1,6 @@
 ---
 name: orchestration-agent
-description: 현재 과제를 기준으로 git preflight, 프롬프트 분해, skill 호출 순서, outputs 경로를 조율해 기존 lesson workflow를 실행 가능한 최소 orchestration plan으로 닫는 Skill
+description: 현재 과제를 기준으로 git preflight, Lesson 1 baseline, 프롬프트 분해, skill 호출 순서, outputs 경로와 progress log를 조율해 기존 lesson workflow를 실행 가능한 최소 orchestration plan으로 닫는 Skill
 ---
 
 # 역할
@@ -16,6 +16,7 @@ description: 현재 과제를 기준으로 git preflight, 프롬프트 분해, s
 
 # 입력 계약
 - 현재 작업 1문장
+- Lesson 1에서 이어받는 workflow 또는 outputs
 - lesson workflow에서 유지할 요소 2~3개
 - 현재 안 맞는 지점 1~3개
 - 현재 작업 폴더 또는 runtime 정보
@@ -23,6 +24,7 @@ description: 현재 과제를 기준으로 git preflight, 프롬프트 분해, s
 
 있으면 더 좋은 정보:
 - 기존 `outputs/` 파일
+- `notes/progress-log.md`
 - 현재 막힌 지점
 - 비교 대상 runtime (`Gemini`, `Codex`, `Claude Code`)
 
@@ -47,25 +49,34 @@ description: 현재 과제를 기준으로 git preflight, 프롬프트 분해, s
    - 그 이유
 6. output inventory
    - 바로 저장할 파일 3~7개
-7. 다음 10분 행동 3개
+7. progress log update
+   - `notes/progress-log.md`
+   - Lesson 1 Baseline
+   - Action / Decision
+   - Evidence / Saved outputs
+   - Next Action
+8. 다음 10분 행동 3개
 
 # 절차
-1. 현재 작업을 한 문장으로 다시 적는다.
+1. 현재 작업을 한 문장으로 다시 적고, Lesson 1에서 이어받는 workflow / outputs baseline을 먼저 고정한다.
 2. 현재 폴더가 git repo 라면 `git status -sb -> git fetch origin -> git pull --ff-only` 순서로 local sync 가능 여부를 먼저 판단한다.
    - working tree가 깨끗하지 않으면 pull 전에 정리가 필요하다고 적는다.
-3. 입력을 `상황 정보`, `앞 선언적 지식`, `절차적 지식`, `뒤 선언적 지식`으로 분해한다.
+3. `notes/progress-log.md`에 Lesson 1 Baseline, 현재 mismatch, keep-change를 먼저 기록한다.
+4. 입력을 `상황 정보`, `앞 선언적 지식`, `절차적 지식`, `뒤 선언적 지식`으로 분해한다.
    - 뒤 선언적 지식에는 반드시 `출력 계약`을 포함한다.
-4. 현재 과제에 필요한 최소 phase만 남겨 orchestration plan을 만든다.
+5. 현재 과제에 필요한 최소 phase만 남겨 orchestration plan을 만든다.
    - 기본 후보는 `research -> organize -> analysis -> writing -> revise` 이다.
    - 현재 과제와 맞지 않는 phase는 빼되, 이유를 짧게 적는다.
-5. orchestration 로직은 Skill에 두고, command는 thin launcher 또는 review wrapper 로 남긴다.
-6. outputs/ 경로를 먼저 닫는다.
+6. orchestration 로직은 Skill에 두고, command는 thin launcher 또는 review wrapper 로 남긴다.
+7. outputs/ 경로를 먼저 닫는다.
    - 파일 이름은 현재 과제 의미가 바로 드러나게 잡는다.
-7. 마지막에는 바로 실행 가능한 다음 행동 3개만 남긴다.
+8. outputs 저장 경로와 오늘의 핵심 판단을 `notes/progress-log.md`에 다시 남긴다.
+9. 마지막에는 바로 실행 가능한 다음 행동 3개만 남긴다.
 
 # resources / references / assets
 - lesson guide: `../../../README.md`
 - runtime guide: `../../../GEMINI.md`
+- progress log: `../../../notes/progress-log.md`
 - remix analysis skill: `../remix-task/SKILL.md`
 - lesson 1 example skills:
   - `../../../../lesson-1-research-writing/.gemini/skills/research-task/SKILL.md`
@@ -86,6 +97,7 @@ description: 현재 과제를 기준으로 git preflight, 프롬프트 분해, s
 
 # verification
 - git preflight 메모가 있는가
+- `notes/progress-log.md`에 Lesson 1 baseline과 오늘의 판단이 기록됐는가
 - 프롬프트가 `상황 정보 + 선언적 지식 + 절차적 지식`으로 분해됐는가
 - 선언적 지식이 `출력 계약`까지 닫히는가
 - orchestration 판단이 command보다 Skill에 더 많이 들어가 있는가

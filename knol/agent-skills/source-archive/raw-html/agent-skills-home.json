@@ -1,0 +1,13 @@
+{
+  "id": "agent-skills-home",
+  "group": "agent-skills-open-standard",
+  "vendor": "Agent Skills",
+  "topic": "Agent Skills Home",
+  "url": "https://agentskills.io/home",
+  "fetched_at": "2026-04-16T03:40:21+00:00",
+  "final_url": "https://agentskills.io/home",
+  "status": 200,
+  "content_type": "text/html; charset=utf-8",
+  "content_length": 256790,
+  "sha256": "eac6f952dd1cfe147b4ba4673a907bf2d2592dd84b5ad44d73803d92e5f52717"
+}

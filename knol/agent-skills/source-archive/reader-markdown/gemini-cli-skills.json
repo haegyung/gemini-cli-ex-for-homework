@@ -1,0 +1,14 @@
+{
+  "id": "gemini-cli-skills",
+  "group": "google-gemini-cli",
+  "vendor": "Google",
+  "topic": "Gemini CLI Skills",
+  "url": "https://geminicli.com/docs/cli/skills/",
+  "reader_url": "https://r.jina.ai/http://geminicli.com/docs/cli/skills/",
+  "fetched_at": "2026-04-16T03:40:19+00:00",
+  "final_url": "https://r.jina.ai/http://geminicli.com/docs/cli/skills/",
+  "status": 200,
+  "content_type": "text/plain; charset=utf-8",
+  "content_length": 21910,
+  "sha256": "e43c8b07e2e9b4eeb609a53d6dda5c7214d8b6cbbbaa884d717e768e296327dc"
+}

@@ -4,7 +4,23 @@ set -euo pipefail
 ROOT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")/.." && pwd)"
 OUT_FILE="$ROOT_DIR/COMBINED.md"
 
-{
+case "${1:-}" in
+  "")
+    ;;
+  --output)
+    if [[ $# -ne 2 ]]; then
+      echo "usage: bash scripts/build_combined.sh [--output <path>]" >&2
+      exit 2
+    fi
+    OUT_FILE="$2"
+    ;;
+  *)
+    echo "usage: bash scripts/build_combined.sh [--output <path>]" >&2
+    exit 2
+    ;;
+esac
+
+generate_combined() {
   echo "# LLM101.Learn-is-Doing Combined"
   echo
   echo "> Auto-generated file. Edit course README or lesson README files, then rebuild."
@@ -30,4 +46,6 @@ OUT_FILE="$ROOT_DIR/COMBINED.md"
     echo
     echo "<!-- END ${lesson_rel} -->"
   done < <(find "$ROOT_DIR/lessons" -mindepth 2 -maxdepth 2 -name README.md | sort)
-} > "$OUT_FILE"
+}
+
+generate_combined > "$OUT_FILE"

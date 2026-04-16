@@ -1,0 +1,13 @@
+{
+  "id": "agent-skills-specification",
+  "group": "agent-skills-open-standard",
+  "vendor": "Agent Skills",
+  "topic": "Skill Specification",
+  "url": "https://agentskills.io/specification",
+  "fetched_at": "2026-04-16T03:40:41+00:00",
+  "final_url": "https://agentskills.io/specification",
+  "status": 200,
+  "content_type": "text/html; charset=utf-8",
+  "content_length": 450739,
+  "sha256": "8a9f671fa2650427cc1fe20f8914165a1513d56d45a6d1dfb7fa4e3f296d2906"
+}

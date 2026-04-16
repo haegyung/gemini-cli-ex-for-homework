@@ -20,7 +20,10 @@ Included sources:
 - [Lesson 2. Skill을 에이전트처럼 이해하고 내 과제에 맞게 remix하기](./lessons/lesson-2-remix-skill-and-command/README.md)
 
 워크숍 운영 문서:
-- [Workshop Materials](./workshop/README.md)
+- [Workshop Materials](../LLM101.docs.Learn-is-doing/canonical/markdown/workshop-materials.md)
+
+VibeWorkers OL 연동 문서:
+- [VibeWorkers OL System](./ol/README.md)
 
 프로젝트 정의:
 - [PROJECT_DEFINITION.md](./PROJECT_DEFINITION.md)
@@ -45,14 +48,36 @@ Included sources:
 - lesson 1은 기준 문서의 `GEMINI.md 작성 -> SKILL 5개 -> custom command 2개 -> 첫 실행 -> revise loop`를 lesson 자산으로 정리한 버전입니다.
 - lesson 2는 같은 흐름을 자기 과제에 맞게 최소 수정하되, skill을 `agent capability`로 읽고 command에 있던 orchestration 역할을 `orchestration-agent` skill로 올리는 extension 입니다.
 - lesson 2 이후의 코스 공통 기준은 `프롬프트에 상황 정보 + 선언적 지식 + 절차적 지식이 모두 있어야 한다`는 점을 명시하는 것입니다.
-- lesson 실행 전 현재 작업 폴더가 git repo 라면 `local sync`부터 점검하는 것을 기본 preflight로 둡니다.
+- lesson 실행 전 현재 작업 폴더가 git repo 라면 `local sync 가능 상태`부터 점검하는 것을 기본 preflight로 둡니다. working tree가 깨끗하고 `origin` 원격이 있을 때만 fetch/pull을 진행합니다.
+- local 폴더 전체를 학습자에게 그대로 노출하는 것을 기본값으로 두지 않고, 필요한 내용만 lesson 문서나 VibeWorkers OL 본문에 드러내는 것을 원칙으로 둡니다.
+- 학생-facing 문서에서 낯선 전문 용어나 기술 용어가 나오면, 처음 등장할 때 쉬운 말로 바로 풀어 쓰거나 짧은 용어 풀이를 붙입니다.
 - `Gemini CLI`, `Codex`, `Claude Code`를 별도 커리큘럼으로 나누지 않고, 같은 workflow와 산출물 구조를 유지한 채 필요한 차이만 따로 안내합니다.
 - runtime별 skill 구조 차이는 `./knol/agent-skills/`의 공유 요약을 기준으로 통일합니다.
+- publishable workshop 운영 문서는 `../LLM101.docs.Learn-is-doing/canonical/markdown/`을 정본으로 두고, tools repo는 별도 `workshop/` 미러를 두지 않고 이 경로를 직접 참조합니다.
+
+## 0-1. 낯선 용어를 읽는 기본 규칙
+
+이 코스에서는 전문 용어를 많이 아는지를 평가하지 않습니다. 문서에 낯선 말이 나오면 아래 방식으로 바로 이해할 수 있게 씁니다.
+
+- `workflow`
+  - 일을 끝내기 위한 작업 순서
+- `skill`
+  - 특정 작업을 덜 막히게 해 주는 작은 전문 도우미
+- `command`
+  - 자주 쓰는 요청을 바로 실행하게 만든 짧은 호출문
+- `runtime`
+  - 지금 실제로 쓰는 실행 환경. 예: `Gemini CLI`, `Codex`, `Claude Code`
+- `preflight`
+  - 시작 전에 먼저 확인하는 점검 단계
+- `orchestration`
+  - 여러 단계와 도구를 어떤 순서로 묶어 움직일지 정하는 일
+
+학생-facing 문서에서는 위처럼 `용어 -> 쉬운 말` 순서로 처음 설명하고, 그다음부터만 짧은 원어를 다시 씁니다.
 
 ## 1. 가장 짧은 시작 순서
 
 1. 기준 학습 문서 [`tutorial-gemini-cli-student-workflow.md`](../LLM101.docs.Learn-is-doing/canonical/markdown/tutorial-gemini-cli-student-workflow.md) 를 한 번 읽습니다.
-2. 현재 작업 폴더가 git repo 라면 `git status -sb`, `git fetch origin`, `git pull --ff-only` 순서로 local sync 가능 여부를 먼저 점검합니다.
+2. 현재 작업 폴더가 git repo 라면 먼저 `git status -sb`로 상태를 확인합니다. working tree가 깨끗하고 `origin` 원격이 있을 때만 `git fetch origin`, `git pull --ff-only`를 실행합니다. 로컬 변경이 있거나 원격이 없으면 sync 단계는 건너뛰고 현재 상태만 기록합니다.
 3. 이번 주에 실제로 해야 하는 작업 1개를 문장으로 적습니다.
 4. `lessons/lesson-1-research-writing/` 폴더를 현재 작업 환경으로 import 합니다.
 5. `GEMINI.md`, `.gemini/`, `outputs/`를 현재 환경 규약에 맞게 불러옵니다.
@@ -78,8 +103,8 @@ Included sources:
 
 ### Lesson 2
 
-- 목적: Lesson 1 예제를 버리지 않고 자기 과제에 맞게 최소 수정하되, skill을 `재사용 가능한 agent capability`로 이해하고 최종적으로 `orchestration-agent` skill 1개로 닫습니다.
-- 추가 기준: 프롬프트를 `상황 정보 + 선언적 지식 + 절차적 지식`으로 분해해 보고, 시작 전에 git local sync를 먼저 점검합니다.
+- 목적: Lesson 1 예제를 버리지 않고 자기 과제에 맞게 최소 수정하되, skill을 `재사용 가능한 agent capability`로 이해하고 최종적으로 `orchestration-agent` skill 1개까지 만들어 봅니다.
+- 추가 기준: 프롬프트를 `상황 정보 + 선언적 지식 + 절차적 지식`으로 분해해 보고, 시작 전에 git local sync 가능 상태를 먼저 점검합니다. working tree가 깨끗하고 `origin`이 있을 때만 fetch/pull을 진행합니다.
 - 기준 근거:
   - 기준 문서의 `9) 결과 수정 루프`
   - `10) 다음에 다시 쓸 때 기본 실행 패턴`
@@ -125,7 +150,8 @@ Included sources:
 - 산출물 구조는 같은 뜻을 유지합니다.
 - `GEMINI.md`의 규칙을 각 환경의 runtime 파일로 옮깁니다.
 - `.gemini` 자산은 각 환경의 skill / command 구조로 다시 만듭니다.
-- 현재 폴더가 git repo 라면 lesson 시작 전에 local sync 상태부터 확인합니다.
+- 현재 폴더가 git repo 라면 lesson 시작 전에 local sync 가능 상태부터 확인합니다. working tree가 깨끗하고 `origin`이 있을 때만 fetch/pull을 진행합니다.
+- local 폴더의 세부 내용은 필요한 부분만 노출하고, 반복해서 참고해야 하는 안내는 VibeWorkers OL 본문에 적어 학습자 surface를 얇게 유지합니다.
 - 프롬프트를 설명할 때는 `상황 정보`, `선언적 지식`, `절차적 지식`을 분리하고, `출력 계약`은 선언적 지식의 닫기 단계로 둡니다.
 
 필요할 때만 별도 안내:
@@ -138,39 +164,61 @@ Included sources:
 이 코스의 정본 경로는 아래처럼 나눕니다.
 - course 공통 안내 SoT: `README.md`
 - project 정의 SoT: `PROJECT_DEFINITION.md`
+- 구현 요구사항 SoT: `IMPLEMENTATION_REQUIREMENTS.md`
 - lesson 템플릿 SoT: `LESSON_TEMPLATE.md`
 - 합본 SoT: `COMBINED.md`
 - 합본 생성 스크립트 SoT: `scripts/build_combined.sh`
+- course 검증 SoT: `scripts/validate_course.sh`
+- OL 검증 SoT: `scripts/validate_vibeworkers_ol.sh`
+- quality gate SoT: `scripts/run_quality_gate.sh`
 - lesson 1 본문 SoT: `lessons/lesson-1-research-writing/README.md`
 - lesson 1 runtime 규칙 SoT: `lessons/lesson-1-research-writing/GEMINI.md`
 - lesson 2 본문 SoT: `lessons/lesson-2-remix-skill-and-command/README.md`
 - lesson 2 runtime 규칙 SoT: `lessons/lesson-2-remix-skill-and-command/GEMINI.md`
 - 기준 학습 문서 SoT: `../LLM101.docs.Learn-is-doing/canonical/markdown/tutorial-gemini-cli-student-workflow.md`
 - shared agent-skills guide SoT: `knol/agent-skills/skill-as-agent-shared-guide.md`
+- workshop publishable SoT: `../LLM101.docs.Learn-is-doing/canonical/markdown/workshop-materials.md`
+- OL bridge SoT: `ol/README.md`
+- OL inventory SoT: `ol/manifest.tsv`
+- OL page contracts SoT: `ol/pages/*.md`
 
 현재 폴더 구조:
 
 ```text
-LLM101.Learn-is-Doing/
+LLM101.tools.Learn-is-doing/
 ├── README.md
 ├── PROJECT_DEFINITION.md
+├── IMPLEMENTATION_REQUIREMENTS.md
 ├── LESSON_TEMPLATE.md
 ├── COMBINED.md
+├── knol/
+├── ol/
+│   ├── README.md
+│   ├── manifest.tsv
+│   └── pages/
 ├── scripts/
-│   └── build_combined.sh
-└── lessons/
-    ├── lesson-1-research-writing/
-    │   ├── README.md
-    │   ├── GEMINI.md
-    │   ├── .gemini/
-    │   ├── outputs/
-    │   └── notes/
-    └── lesson-2-remix-skill-and-command/
-        ├── README.md
-        ├── GEMINI.md
-        ├── .gemini/
-        ├── outputs/
-        └── notes/
+│   ├── build_combined.sh
+│   ├── run_quality_gate.sh
+│   ├── validate_course.sh
+│   └── validate_vibeworkers_ol.sh
+├── lessons/
+│   ├── lesson-1-research-writing/
+│   │   ├── README.md
+│   │   ├── GEMINI.md
+│   │   ├── .gemini/
+│   │   ├── outputs/
+│   │   └── notes/
+│   └── lesson-2-remix-skill-and-command/
+│       ├── README.md
+│       ├── GEMINI.md
+│       ├── .gemini/
+│       ├── outputs/
+│       └── notes/
+└── ../LLM101.docs.Learn-is-doing/canonical/markdown/
+    ├── workshop-materials.md
+    ├── workshop-90min-run-sheet.md
+    ├── workshop-90min-student-handout.md
+    └── workshop-d-1-preflight.md
 ```
 
 ## 5. 합본 정책
@@ -181,12 +229,15 @@ LLM101.Learn-is-Doing/
 - 편집 대상은 `README.md`, `lessons/*/README.md`, `LESSON_TEMPLATE.md`
 - 최종 합본은 `COMBINED.md`
 - 합본은 직접 편집하지 않고 스크립트로 다시 생성합니다.
+- workshop 문서는 docs 정본을 직접 참조하고, `ol/` 문서는 별도 브리지로 검증합니다.
 
 생성 명령:
 
 ```bash
 bash scripts/build_combined.sh
 ```
+
+이 명령만 `COMBINED.md`를 다시 쓴다. quality gate는 최신성만 검사하고 파일을 직접 다시 만들지 않는다.
 
 ## 6. Quality Gate 실행
 
@@ -196,9 +247,14 @@ bash scripts/build_combined.sh
 bash scripts/run_quality_gate.sh
 ```
 
+이 게이트는 아래 두 검증을 함께 실행합니다.
+- `bash scripts/validate_course.sh`
+- `bash scripts/validate_vibeworkers_ol.sh`
+
 해석 기준:
-- `PASS`(exit code 0): Must 완료 조건 충족
+- `PASS`(exit code 0): course 자산과 OL bridge의 Must 완료 조건을 함께 충족
 - `FAIL`(exit code 1): 미완료. 로그에 나온 실패 항목부터 수정 후 재실행
+- `FAIL` 중 `COMBINED.md was stale before gate`가 나오면 `bash scripts/build_combined.sh`를 먼저 실행한 뒤 다시 검사한다
 
 ---
 
@@ -220,6 +276,19 @@ course 공통 안내는 상위 폴더의 `../../README.md`를 보고, 현재 les
 - 완벽한 결과보다 작은 성공 경험을 먼저 만듭니다.
 - 예제 Skill과 command를 그대로 한 번 실행한 뒤, 자기 작업에 맞게 고칩니다.
 
+## 1-1. 쉬운 말 풀이
+
+- `workflow`
+  - 이 lesson에서 따라갈 작업 순서
+- `Skill`
+  - 특정 작업을 덜 막히게 해 주는 작은 전문 도우미
+- `command`
+  - 자주 쓰는 요청을 바로 실행하는 짧은 호출문
+- `runtime`
+  - 지금 실제로 쓰는 환경. 예: `Gemini CLI`, `Codex`, `Claude Code`
+- `revise`
+  - 한 번 만든 결과를 다시 다듬는 단계
+
 ## 2. 기준 학습 문서와 기본 연습 과제
 
 기준 학습 문서:
@@ -238,14 +307,16 @@ course 공통 안내는 상위 폴더의 `../../README.md`를 보고, 현재 les
 원칙:
 - 사용자가 별도 과제를 지정하지 않으면 위 기본 연습 과제로 시작합니다.
 - lesson의 목표와 출력 형식은 기준 학습 문서의 학생 workflow를 그대로 따릅니다.
+- local 폴더의 내용을 전부 학습자에게 펼쳐 보이는 것을 기본값으로 두지 않고, 필요한 내용만 이 본문에 노출합니다.
+- 계속 참고해야 하는 실행 안내는 로컬 폴더 탐색보다 VibeWorkers OL 본문에 적어 다시 볼 수 있게 정리합니다.
 - `Codex`와 `Claude Code` 안내가 필요하더라도, 같은 workflow와 outputs를 유지한 채 필요한 차이만 따로 적습니다.
 
 ## 3. 이 lesson 폴더에서 실제로 쓰는 파일
 
 - `README.md`
-  - 현재 lesson 실행 가이드
+  - 현재 lesson 실행 안내문
 - `GEMINI.md`
-  - lesson runtime 규칙 정본
+  - 이 lesson이 Gemini에서 어떻게 움직일지 적어 둔 실행 규칙
 - `.gemini/skills/research-task/SKILL.md`
   - 리서치 시작용 예시 Skill
 - `.gemini/skills/organize-task/SKILL.md`
@@ -257,9 +328,9 @@ course 공통 안내는 상위 폴더의 `../../README.md`를 보고, 현재 les
 - `.gemini/skills/revise-task/SKILL.md`
   - 수정용 예시 Skill
 - `.gemini/commands/taskflow/start.toml`
-  - 리서치부터 초안까지 시작하는 예시 command
+  - 리서치부터 초안까지 시작하는 예시 호출문
 - `.gemini/commands/taskflow/revise.toml`
-  - 초안을 기준으로 다듬는 예시 command
+  - 초안을 기준으로 다시 다듬는 예시 호출문
 - `outputs/`
   - lesson 산출물 저장 폴더
 - `notes/`
@@ -441,7 +512,7 @@ Claude Code용 Lesson 1 skill과 custom command 구조로 옮겨줘.
 ### 초안이 막힐 때
 
 ```text
-완벽한 글 말고 끝까지 갈 수 있는 초안으로 먼저 써줘.
+처음부터 완벽하게 쓰려 하지 말고, 일단 초안을 끝까지 써줘.
 근거가 약한 문장은 표시해줘.
 ```
 
@@ -466,8 +537,8 @@ course 공통 안내는 상위 폴더의 `../../README.md`를 보고, 현재 les
 ## 1. 이 lesson의 목표
 
 이번 lesson의 목적은 두 가지를 한 번에 잡는 것입니다.
-- `skill`을 `재사용 가능한 마이크로 에이전트 역량`으로 이해한다
-- 그 관점으로 `Lesson 1`의 예제 Skill과 command를 자기 과제에 맞게 다시 설계하고, 최종적으로 `orchestration-agent` skill 1개로 닫는다
+- `skill`을 `특정 작업을 맡는 재사용 가능한 작은 전문 도우미`로 이해한다
+- 그 관점으로 `Lesson 1`의 예제 Skill과 command를 자기 과제에 맞게 다시 설계하고, 최종적으로 `orchestration-agent` skill 1개까지 만들어 본다
 
 이번 lesson에서 학생이 가져가야 할 핵심 결론:
 - skill은 단순한 문장 묶음이 아니라 `역할 + 트리거 + 절차 + 자원 + 출력 계약`을 가진 작은 agent capability 입니다.
@@ -485,9 +556,9 @@ course 공통 안내는 상위 폴더의 `../../README.md`를 보고, 현재 les
 ## 2. Glossary
 
 - `skill`
-  - 특정 작업을 안정적으로 수행하게 만드는 재사용 가능한 역량 단위
+  - 특정 작업을 안정적으로 수행하게 만드는 재사용 가능한 작은 전문 도우미
 - `subagent`
-  - 별도 컨텍스트와 권한으로 독립 실행되는 delegated agent
+  - 본체와 조금 떨어져 따로 움직이는 보조 에이전트
 - `선언적 지식`
   - 무엇을 해야 하는지, 어떤 상태를 목표로 하는지, 어떤 제약과 용어를 지키는지에 대한 지식
 - `절차적 지식`
@@ -496,6 +567,14 @@ course 공통 안내는 상위 폴더의 `../../README.md`를 보고, 현재 les
   - 지금 어떤 과제를 다루는지, 어떤 파일/산출물/환경에서 작업하는지, 현재 어디서 막혔는지처럼 현재 상태를 고정하는 정보
 - `출력 계약`
   - 최종 산출물 형식, 평가 기준, 예시, 금지사항처럼 결과를 닫아 주는 규칙
+- `orchestration`
+  - 여러 단계와 도구를 어떤 순서로 묶어 움직일지 정하는 일
+- `trigger contract`
+  - 이 skill을 언제 켜야 하고 언제 켜지 말아야 하는지 정해 둔 기준
+- `entrypoint`
+  - 이 skill을 읽기 시작하는 첫 파일이나 시작 지점
+- `progress log`
+  - Lesson 1에서 무엇을 이어받고 Lesson 2에서 무엇을 바꾸는지 남기는 작업 진행 로그
 
 ## 3. 기준 학습 문서와 기본 연습 과제
 
@@ -517,7 +596,28 @@ course 공통 안내는 상위 폴더의 `../../README.md`를 보고, 현재 les
 원칙:
 - 사용자가 별도 과제를 지정하지 않으면 위 기본 연습 과제로 시작합니다.
 - lesson의 기준은 `기존 workflow를 버리지 않고 agent 구조를 더 잘 드러내는 최소 수정` 입니다.
+- Lesson 2는 Lesson 1의 연속선으로 보고, 무엇을 이어받고 무엇을 바꾸는지 `notes/progress-log.md`에 먼저 고정합니다.
+- local 폴더의 내용을 전부 노출하는 대신, 이 lesson에 필요한 부분만 본문에 드러내고 나머지는 작업 자산으로 남깁니다.
+- 계속 참조해야 하는 규칙이나 remix 판단 근거는 local 폴더 경로 안내보다 VibeWorkers OL 본문에 옮겨 적는 것을 우선합니다.
 - `Codex`와 `Claude Code` 안내가 필요하더라도, 같은 workflow와 outputs를 유지한 채 필요한 차이만 따로 적습니다.
+
+## 3-1. Lesson 1 연속선과 작업 진행 로그
+
+Lesson 2는 독립 수업이 아니라 `Lesson 1으로 만든 workflow를 어디까지 유지하고 어디서 remix할지`를 다루는 연속 수업입니다.
+
+그래서 이번 lesson에서는 결과물만 저장하지 않고 `notes/progress-log.md`를 함께 씁니다.
+
+이 파일에는 최소한 아래 5가지를 남깁니다.
+- Lesson 1에서 이어받는 workflow / outputs
+- Lesson 1에서 안 맞았던 지점
+- 그대로 유지할 요소
+- 이번 session의 Action / Decision
+- Evidence / Saved outputs / Next Action
+
+권장 갱신 시점:
+- `remix:start` 직후
+- `outputs/01~05`를 저장한 뒤
+- `remix:review`를 돌린 뒤
 
 ## 4. 왜 skill을 agent처럼 가르치는가
 
@@ -562,6 +662,14 @@ course 공통 안내는 상위 폴더의 `../../README.md`를 보고, 현재 les
 - `description`은 소개문이 아니라 `언제 이 skill을 써야 하는가`를 말해 주는 trigger contract다
 - `scripts/`, `references/`, `assets/`는 optional supporting files다
 - 긴 설명은 본문에 다 넣기보다 progressive disclosure로 분리하는 것이 공식 권장과 맞다
+
+쉬운 말로 다시 말하면:
+- `SKILL.md`
+  - 이 skill 설명을 가장 먼저 읽는 중심 파일
+- `description`
+  - 이 skill을 언제 쓰면 좋은지 알려 주는 사용 기준 문장
+- `scripts`, `references`, `assets`
+  - 본문에 다 넣지 않고 따로 빼 둔 보조 자료
 
 ### 5-2. runtime별 공식 요구사항
 
@@ -736,6 +844,8 @@ course 공통 안내는 상위 폴더의 `../../README.md`를 보고, 현재 les
   - lesson 산출물 저장 폴더
 - `notes/`
   - lesson 메모 폴더
+- `notes/progress-log.md`
+  - Lesson 1 -> Lesson 2 연속선과 remix 판단을 남기는 작업 진행 로그
 
 ## 9. 먼저 고를 것: 내 작업에서 어디가 안 맞았는가
 
@@ -764,6 +874,8 @@ course 공통 안내는 상위 폴더의 `../../README.md`를 보고, 현재 les
 - 기존 workflow를 버리지 않고 mismatch를 줄이는 방향으로 수정합니다.
 - 수정 전에는 반드시 `이 skill이 어떤 agent 역할을 못 하고 있는가`를 먼저 말로 적습니다.
 - 최종 산출물은 가능한 한 command보다 `orchestration-agent` skill 쪽에 더 많은 절차 지식을 남깁니다.
+- 시작할 때 `notes/progress-log.md`에 Lesson 1 baseline, mismatch, keep/change를 먼저 적습니다.
+- `remix:start`, `outputs/01~05`, `remix:review` 뒤에는 `notes/progress-log.md`를 갱신합니다.
 
 ### 10-1. 시작 전 local sync
 
@@ -804,9 +916,11 @@ git pull --ff-only
 그리고 이 skill을 하나의 agent capability로 보면 어떤 구조를 가져야 하는지도 같이 정리해줘."
 작업을 시작해줘.
 가능하면 outputs/01_skill_as_agent_note.md부터 제안해줘.
+가능하면 notes/progress-log.md에 Lesson 1 baseline부터 같이 정리해줘.
 ```
 
 이 요청은 보통 아래 흐름으로 이어집니다.
+- Lesson 1 baseline과 현재 과제를 `notes/progress-log.md`에 기록
 - 현재 작업 1문장 정리
 - Lesson 1과 안 맞는 지점 3개 식별
 - 그대로 유지할 요소 3개 식별
@@ -856,6 +970,7 @@ git pull --ff-only
 - `outputs/03_orchestration_skill.md`
 - `outputs/04_prompt_decomposition.md`
 - `outputs/05_orchestration_command.md`
+- `notes/progress-log.md`
 
 ### 10-6. draft 검토
 
@@ -879,19 +994,21 @@ agent 구조가 빠진 부분은 보완하고,
 수정 결과는 보통 아래 파일로 정리하면 됩니다.
 - `outputs/06_test_prompt.md`
 - `outputs/07_revision_notes.md`
+- `notes/progress-log.md`에 review 요약 / 빠진 구조 / 다음 행동 기록
 
 ## 11. Lesson 2를 처음 실행할 때 가장 안전한 순서
 
 1. lesson 자산이 들어 있는 현재 폴더가 git repo인지 확인하기
 2. git repo라면 `git fetch origin`과 `git pull --ff-only`로 local sync 가능 여부 먼저 점검하기
 3. Lesson 1에서 실제로 안 맞았던 지점 1개 고르기
-4. 그 차이를 `이 skill이 무슨 agent 역할을 못 하고 있는가`로 다시 말해 보기
-5. Lesson 1 command가 맡던 orchestration 역할을 `orchestration-agent` skill로 올릴 범위를 정하기
-6. 현재 환경에서 lesson 자산을 한 번 불러오기
-7. `remix:start` 단계에 해당하는 시작 요청을 1회 실행하기
-8. `outputs/01~05`까지 저장하기
-9. `remix:review` 단계까지 1회 돌려보기
-10. 그 다음 자기 과제에 맞게 실제 `orchestration-agent` skill 수정 범위를 결정하기
+4. `notes/progress-log.md`에 Lesson 1 baseline / mismatch / keep-change 기록하기
+5. 그 차이를 `이 skill이 무슨 agent 역할을 못 하고 있는가`로 다시 말해 보기
+6. Lesson 1 command가 맡던 orchestration 역할을 `orchestration-agent` skill로 올릴 범위를 정하기
+7. 현재 환경에서 lesson 자산을 한 번 불러오기
+8. `remix:start` 단계에 해당하는 시작 요청을 1회 실행하기
+9. `outputs/01~05`와 `notes/progress-log.md`를 함께 저장하기
+10. `remix:review` 단계까지 1회 돌려보고 로그에 review 결과 남기기
+11. 그 다음 자기 과제에 맞게 실제 `orchestration-agent` skill 수정 범위를 결정하기
 
 ## 12. 추천 실습 시나리오
 
@@ -954,16 +1071,17 @@ Claude, Codex, Gemini 관점에서
 ```text
 지금 draft에서 과한 부분을 줄여줘.
 프롬프트를 상황 정보 / 선언적 지식 / 절차적 지식으로 다시 나눠주고,
-선언적 지식은 결과 계약까지 닫히게 정리해줘.
+선언적 지식은 결과 계약까지 분명하게 정리해줘.
 바로 테스트 가능한 프롬프트 3개만 남겨줘.
 ```
 
-## 14. 이 lesson의 최소 완료선
+## 14. 이 lesson이 끝났다고 볼 기준
 
-이번 lesson은 아래 세 가지가 나오면 닫을 수 있습니다.
+아래 네 가지가 나오면 이 lesson은 끝났다고 볼 수 있습니다.
 
 - `skill을 agent처럼 볼 수 있는 이유`를 3~5문장으로 설명할 수 있다
 - `Claude / Codex / Gemini / Agent Skills`의 공통점과 차이점을 1장 표나 bullet로 정리할 수 있다
 - 자기 과제용 `orchestration-agent` Skill 1개와 얇은 command 1개를 `상황 정보 + 선언적 지식 + 절차적 지식` 관점으로 다시 쓸 수 있다
+- `notes/progress-log.md`에 `Lesson 1 Baseline -> 오늘의 Action / Decision -> Evidence / Saved outputs -> Next Action` 흐름이 남아 있다
 
 <!-- END lessons/lesson-2-remix-skill-and-command/README.md -->

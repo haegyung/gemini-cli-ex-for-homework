@@ -3,6 +3,7 @@ prompt = """
 대상 draft:
 @{outputs/03_orchestration_skill.md}
 @{outputs/05_orchestration_command.md}
+@{notes/progress-log.md}
 
 수정 요청: {{args}}
 
@@ -17,6 +18,12 @@ remix-task를 참고해 아래를 수행하라.
 8. 저장 권장:
    - outputs/06_test_prompt.md
    - outputs/07_revision_notes.md
+   - notes/progress-log.md
+9. `notes/progress-log.md`에는 아래를 추가하라.
+   - review에서 보완할 구조
+   - 유지할 판단
+   - Evidence / Saved outputs
+   - Next Action
 
 마지막에 다음 10분 행동 3개를 제안하라.
 """

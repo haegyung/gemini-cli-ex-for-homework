@@ -1,0 +1,14 @@
+{
+  "id": "claude-code-subagents",
+  "group": "anthropic-claude-code",
+  "vendor": "Anthropic",
+  "topic": "Claude Code Sub-agents",
+  "url": "https://code.claude.com/docs/en/sub-agents",
+  "reader_url": "https://r.jina.ai/http://code.claude.com/docs/en/sub-agents",
+  "fetched_at": "2026-04-16T03:40:12+00:00",
+  "final_url": "https://r.jina.ai/http://code.claude.com/docs/en/sub-agents",
+  "status": 200,
+  "content_type": "text/plain; charset=utf-8",
+  "content_length": 59891,
+  "sha256": "c40cc19f0a31c6721043e5a887b5a566f35d0ca7e7801ea875893ca1d036d67d"
+}

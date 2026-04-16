@@ -1,0 +1,13 @@
+{
+  "id": "openai-codex-subagents",
+  "group": "openai-codex",
+  "vendor": "OpenAI",
+  "topic": "Codex Subagents",
+  "url": "https://developers.openai.com/codex/subagents",
+  "fetched_at": "2026-04-16T03:40:06+00:00",
+  "final_url": "https://developers.openai.com/codex/subagents",
+  "status": 200,
+  "content_type": "text/html; charset=utf-8",
+  "content_length": 264414,
+  "sha256": "45cbb5b54de6e4a92a998b12e2ae0c765365b2dece78f56f5b056bfbdc513499"
+}

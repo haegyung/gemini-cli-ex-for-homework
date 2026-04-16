@@ -1,0 +1,14 @@
+{
+  "id": "agent-skills-specification",
+  "group": "agent-skills-open-standard",
+  "vendor": "Agent Skills",
+  "topic": "Skill Specification",
+  "url": "https://agentskills.io/specification",
+  "reader_url": "https://r.jina.ai/http://agentskills.io/specification",
+  "fetched_at": "2026-04-16T03:40:42+00:00",
+  "final_url": "https://r.jina.ai/http://agentskills.io/specification",
+  "status": 200,
+  "content_type": "text/plain; charset=utf-8",
+  "content_length": 10874,
+  "sha256": "7143015f280b96c7d9a43e523e09061c54326f15c956b4411e03770e87ec19cd"
+}
